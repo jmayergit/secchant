@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SecChant</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="ui grid">
+
+  <div class="sixteen wide right aligned column">
+    <div id="topnav">
+      <% if user_signed_in? %>
+        <button name="signout" id="authentication"> Sign Out </button>
+      <% else %>
+        <button name="signin">Sign In</button> |
+        <button name="register">Register</button>
+      <% end %>
+    </div>
+  </div>
+
+    <%= yield %>
+
+</div>
+
+</body>
+</html>
