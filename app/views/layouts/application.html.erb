@@ -8,17 +8,19 @@
 </head>
 <body>
 
-<div class="ui grid">
+<div class="ui grid" id="grid">
 
-  <div class="sixteen wide right aligned column">
-    <div id="topnav">
-      <% if user_signed_in? %>
-        <button name="signout" id="authentication"> Sign Out </button>
-      <% else %>
-        <button name="signin">Sign In</button> |
-        <button name="register">Register</button>
-      <% end %>
-    </div>
+  <div class="eight wide column" id="TopNavL">
+    SECCHANT.COM
+  </div>
+
+  <div class="eight wide right aligned column" id="TopNavR">
+    <% if user_signed_in? %>
+      <button name="signout" id="authentication"> Sign Out </button>
+    <% else %>
+      <button name="signin">Sign In</button> |
+      <button name="register">Register</button>
+    <% end %>
   </div>
 
     <%= yield %>

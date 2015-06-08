@@ -14,6 +14,11 @@
  *= require_self
  */
 
+#grid {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 #topnav {
   background-color: blue;
 }

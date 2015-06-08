@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
 gem 'capybara'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
