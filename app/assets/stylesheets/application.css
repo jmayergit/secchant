@@ -19,6 +19,10 @@
   padding-right: 20px;
 }
 
-#topnav {
-  background-color: blue;
+form {
+  font-size: 15px;
+}
+
+a {
+  font-size: 15px;
 }
