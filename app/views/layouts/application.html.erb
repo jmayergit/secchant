@@ -16,10 +16,10 @@
 
   <div class="eight wide right aligned column" id="TopNavR">
     <% if user_signed_in? %>
-      <button name="Sign out"> Sign Out </button>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% else %>
-      <button name="Sign in"> Sign In </button> |
-      <button name="Register"> Register </button>
+      <%= link_to "Sign in", new_user_session_path %>
+      <%= link_to "Register", new_user_registration_path %>
     <% end %>
   </div>
 
