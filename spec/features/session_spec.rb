@@ -4,7 +4,6 @@ require 'rails_helper'
 feature 'User signs in' do
   scenario 'with valid credentials' do
     @user = FactoryGirl.create(:user)
-    expect(@user).to be_valid
 
     sign_in_with(@user.email, @user.password)
 
@@ -16,12 +15,24 @@ feature 'User signs in' do
 
     expect(page).to have_content 'Sign in'
   end
+end
 
-  def sign_in_with(email, password)
-    visit new_user_session_path
+feature 'User signs out' do
+  scenario 'with sign out link' do
+    @user = FactoryGirl.create(:user)
 
-    fill_in 'user[email]', :with => email
-    fill_in 'user[password]', :with => password
-    click_on 'Log in'
+    sign_in_with(@user.email, @user.password)
+    expect(page).to have_content 'Sign out'
+
+    click_on 'Sign out'
+    expect(page).to have_content 'Sign in'
   end
+end
+
+def sign_in_with(email, password)
+  visit new_user_session_path
+
+  fill_in 'user[email]', :with => email
+  fill_in 'user[password]', :with => password
+  click_on 'Log in'
 end
