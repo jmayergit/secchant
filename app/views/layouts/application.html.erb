@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SecChant</title>
+  <title>SECChant</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,12 +15,37 @@
   </div>
 
   <div class="eight wide right aligned column" id="TopNavR">
+    <span id="session">
     <% if user_signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'session' %>
     <% else %>
-      <%= link_to "Sign in", new_user_session_path %> |
-      <%= link_to "Register", new_user_registration_path %>
+      <%= link_to "Sign in", new_user_session_path, :class => 'session' %> |
+      <%= link_to "Register", new_user_registration_path, :class => 'registration' %>
     <% end %>
+    </span>
+  </div>
+
+  <!-- <div class="sixteen wide left aligned column" id="ddmenu">
+    Home Forums Football Basketball Baseball More
+  </div> -->
+
+  <div class="one wide left aligned column" id="ddmenu">
+    <%= link_to "Home", root_path, :class => 'home' %>
+  </div>
+  <div class="one wide left aligned column" id="ddmenu">
+    Forums
+  </div>
+  <div class="one wide left aligned column" id="ddmenu">
+    Football
+  </div>
+  <div class="one wide left aligned column" id="ddmenu">
+    Basketball
+  </div>
+  <div class="one wide left aligned column" id="ddmenu">
+    Baseball
+  </div>
+  <div class="eleven wide left aligned column" id="ddmenu">
+    More
   </div>
 
     <%= yield %>

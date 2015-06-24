@@ -14,15 +14,52 @@
  *= require_self
  */
 
-#grid {
-  padding-left: 20px;
-  padding-right: 20px;
+.ui.grid {
+  margin-top: 0rem;
 }
 
-form {
-  font-size: 15px;
+a[href="/"] {
+  padding-left: 20px;
+  color: white;
 }
 
 a {
+  font-size: 15px;
+}
+
+#session {
+  color: white;
+}
+
+#TopNavL {
+  font-size: 20px;
+  background-color: #10254A;
+}
+
+#TopNavR {
+  font-size: 20px;
+  background-color: #10254A;
+}
+
+/*#home {
+  padding-left: 20px;
+}*/
+
+.session {
+  color: white;
+}
+
+.registration {
+  padding-right: 20px;
+  color: white;
+}
+
+#ContentR {
+  font-size: 20px;
+}
+
+#ddmenu {
+  color: white;
+  background-color: #00133F;
   font-size: 15px;
 }
