@@ -15,14 +15,14 @@
   </div>
 
   <div class="eight wide right aligned column" id="TopNavR">
-    <span id="session">
+    <div id="session">
     <% if user_signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'session' %>
     <% else %>
       <%= link_to "Sign in", new_user_session_path, :class => 'session' %> |
       <%= link_to "Register", new_user_registration_path, :class => 'registration' %>
     <% end %>
-    </span>
+    </div>
   </div>
 
   <!-- <div class="sixteen wide left aligned column" id="ddmenu">
