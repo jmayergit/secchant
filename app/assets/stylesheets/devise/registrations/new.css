@@ -1,6 +1,9 @@
 #ContentM {
   font-size: 20px;
   padding-left: 25%;
+  box-shadow: 0px 0px 0px 0.2px gray;
+  border-radius: 3px;
+  background-color: white;
 }
 
 form {
