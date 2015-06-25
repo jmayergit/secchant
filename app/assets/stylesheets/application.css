@@ -66,3 +66,13 @@ a {
   background-color: #00133F;
   font-size: 15px;
 }
+
+#MenuHeader {
+  color: #3F4041;
+  padding: 0px 0px 0px 17px;
+  FONT-WEIGHT: bold;
+}
+
+#MenuLink {
+  color: #3F4041;
+}
