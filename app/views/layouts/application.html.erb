@@ -12,22 +12,27 @@
 
   <div class="eight wide column" id="TopNavL">
     <%= link_to "SECCHANT.COM", root_path %>
+    <% if admin_signed_in? %>
+      <% if current_admin.god_mode? %>
+        <span id="GodModeNotice">God Mode</span>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="eight wide right aligned column" id="TopNavR">
     <div id="session">
-    <% if user_signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'session' %>
+    <% if admin_signed_in? %>
+      <%= link_to "Sign out", destroy_admin_session_path, method: :delete, :class => 'session' %>
     <% else %>
-      <%= link_to "Sign in", new_user_session_path, :class => 'session' %> |
-      <%= link_to "Register", new_user_registration_path, :class => 'registration' %>
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'session' %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, :class => 'session' %> |
+        <%= link_to "Register", new_user_registration_path, :class => 'registration' %>
+      <% end %>
     <% end %>
     </div>
   </div>
-
-  <!-- <div class="sixteen wide left aligned column" id="ddmenu">
-    Home Forums Football Basketball Baseball More
-  </div> -->
 
   <div class="one wide left aligned column" id="ddmenu">
     <%= link_to "Home", root_path, :class => 'home' %>

@@ -18,13 +18,15 @@ feature 'User signs up' do
 
     expect(page).to have_content 'Password can\'t be blank'
   end
+end
 
-  def sign_up_with(email, password)
-    visit new_user_registration_path
+# admin cannot sign up via web pages, must be created through command line
 
-    fill_in 'user[email]', :with => email
-    fill_in 'user[password]', :with => password
-    fill_in 'user[password_confirmation]', :with => password
-    click_on 'Sign up'
-  end
+def sign_up_with(email, password)
+  visit new_user_registration_path
+
+  fill_in 'user[email]', :with => email
+  fill_in 'user[password]', :with => password
+  fill_in 'user[password_confirmation]', :with => password
+  click_on 'Sign up'
 end

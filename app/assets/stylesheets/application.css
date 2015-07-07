@@ -76,3 +76,11 @@ a {
 #MenuLink {
   color: #3F4041;
 }
+
+#GodModeNotice {
+  font-size: 15px;
+  color: #ebc21f;
+  font-style: oblique;
+  float: right;
+  text-shadow: 0px 0px 10px;
+}
