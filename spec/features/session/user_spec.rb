@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 feature 'User signs in' do
   scenario 'with valid credentials' do
     @user = FactoryGirl.create(:user)

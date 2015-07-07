@@ -16,6 +16,8 @@ feature 'Admin signs in' do
   end
 
   scenario 'as god mode' do
+    # @admin = FactoryGirl.create(:admin_god_mode)
+    #                 or
     @admin = FactoryGirl.create(:admin, :god_mode)
 
     admin_signs_in_with(@admin.email, @admin.password)
