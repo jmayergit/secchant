@@ -4,6 +4,10 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+group :development do
+  gem 'better_errors'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
