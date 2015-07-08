@@ -1,6 +1,6 @@
 class ForumsController < ApplicationController
   # outside of major site re-implementation forums are static
   def show
-    @params = params
+    @forum = Forum.find(params[:id])
   end
 end

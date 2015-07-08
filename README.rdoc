@@ -1,1 +1,9 @@
 == README
+Testing
+
+  From Command Line
+  Seed test db
+  >> rails c test
+  >> Forum.create(name:"SEC Rant")
+
+  To run tests from command line run 'rspec'
