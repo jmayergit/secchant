@@ -16,6 +16,10 @@
 
 .ui.grid {
   margin-top: 0rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
 a[href="/"] {
