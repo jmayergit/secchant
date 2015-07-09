@@ -5,5 +5,6 @@ Testing
   Seed test db
   >> rails c test
   >> Forum.create(name:"SEC Rant")
+  >> Forum.create(name:"Help Board")
 
   To run tests from command line run 'rspec'
