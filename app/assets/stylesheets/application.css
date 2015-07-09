@@ -53,8 +53,16 @@ a {
   color: white;
 }
 
+.session:hover {
+  color: white;
+}
+
 .registration {
   padding-right: 20px;
+  color: white;
+}
+
+.registration:hover {
   color: white;
 }
 
