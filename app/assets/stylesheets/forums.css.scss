@@ -3,12 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #LNav {
-  border-right: solid 1px #D3D3D3;
   border-top: solid 1px #D3D3D3;
+  border-left: solid 1px #D3D3D3;
+  border-right: solid 1px #D3D3D3;
+  padding: 10px 0px 0px 10px;
 }
 
 #bodyR {
   border-top: solid 1px #D3D3D3;
   border-left: solid 1px #D3D3D3;
-  padding: 2px 2px 2px 10px;
+  border-right: solid 1px #D3D3D3;
+  padding: 20px 2px 2px 20px;
+}
+
+.PgBoardName {
+  color: #000066;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+#LNavH {
+  color: #3F4041;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 7px;
+}
+
+#LNavLi {
+  padding-bottom: 2px;
+  padding-left: 4px;
 }
