@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
 
-  get 'forums/:id' => 'forums#show'
+  get 'forums/:id' => 'forums#show', as: 'forum_show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

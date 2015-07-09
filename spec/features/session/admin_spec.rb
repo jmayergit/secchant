@@ -31,5 +31,5 @@ def admin_signs_in_with(email, password)
 
   fill_in 'admin[email]', :with => email
   fill_in 'admin[password]', :with => password
-  click_on 'Log in'
+  find('.actions').click_on 'Log in'
 end
