@@ -1,39 +1,43 @@
 require 'rails_helper'
 
 feature 'User signs up' do
-  scenario 'With valid email and password' do
-    sign_up_with('valid@email.com', 'password', 'password')
+  scenario 'With invalid email(blank)' do
+    user_signs_up_with('', 'aUsername', 'aPassword', 'aPassword')
 
-    expect(find('#session')).to have_content 'Sign out'
+    expect(find('#error_explanation')).to have_content('Email can\'t be blank')
   end
+  scenario 'With invalid email(regex)' do
+    user_signs_up_with('anEmail', 'aUsername', 'aPassword', 'aPassword')
 
-  scenario 'With invalid email' do
-    sign_up_with('invalid@email', 'password', 'password')
-
-    expect(find('#error_explanation')).to have_content 'Email is invalid'
+    expect(find('#error_explanation')).to have_content('Email is invalid')
   end
+  scenario 'With invalid email(non-unique)' do
+    @user = FactoryGirl.create(:user)
 
-  # scenario 'With pre-existing email'
-  # could use factory girl but I do not know what the sequenced
-  # email would be other option is to manually sign up but that is
-  # ugly
+    user_signs_up_with(@user.email, 'anotherUsername', 'aPassword', 'aPassword')
 
-  scenario 'With blank password' do
-    sign_up_with('valid@email.com', '', '')
-
-    expect(find('#error_explanation')).to have_content 'Password can\'t be blank'
+    expect(find('#error_explanation')).to have_content('Email has already been taken')
   end
+  scenario 'With invalid username(blank)' do
+    user_signs_up_with('anEmail@domain.com', '', 'aPassword', 'aPassword')
 
-  scenario 'With password confirmation not matching password' do
-    sign_up_with('valid@email.com', 'password', 'anotherPassword')
-
-    expect(find('#error_explanation')).to have_content 'Password confirmation doesn\'t match Password'
+    expect(find('#error_explanation')).to have_content('User name can\'t be blank')
   end
+  scenario 'With invalid username(non-unique)' do
+    @user = FactoryGirl.create(:user)
+
+    user_signs_up_with('anEmail@domain.com', @user.user_name, 'aPassword', 'aPassword')
+
+    expect(find('#error_explanation')).to have_content('User name has already been taken')
+  end
+  scenario 'with invalid(short) password'
+  scenario 'with invalid confirmation'
+  scenario 'with valid credentials'
 end
 
 # admin cannot sign up via web pages, must be created through command line
 
-def sign_up_with(email, user_name, password, confirmation)
+def user_signs_up_with(email, user_name, password, confirmation)
   visit new_user_registration_path
 
   fill_in 'user[email]', :with => email
