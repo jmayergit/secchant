@@ -6,16 +6,16 @@
         SEC Forums
       </div>
       <div class="Forums1">
-        <a class="homeLNav" href="/forums/1">SEC Rant</a>
+        <%= link_to 'SEC Rant', forum_show_path(@rant), :class => "homeLNav" %>
       </div>
       <div class="Forums1">
-        <a class="homeLNav" href="/forums/2">SEC Recruiting</a>
+        <%= link_to 'SEC Recruiting', forum_show_path(@recruiting), :class => "homeLNav" %>
       </div>
       <div class="Forums1">
-        <a class="homeLNav" href="/forums/3">SEC Tickets</a>
+        <%= link_to 'SEC Tickets', forum_show_path(@tickets), :class => "homeLNav" %>
       </div>
       <div class="Forums1">
-        <a class="homeLNav" href="/forums/4">Off-Topic Board</a>
+        <%= link_to 'Off-Topic Board', forum_show_path(@offtopic), :class => "homeLNav" %>
       </div>
     </div>
     <div class="Forums">
