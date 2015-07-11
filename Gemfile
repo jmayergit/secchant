@@ -12,6 +12,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
+# This gem does nothing but require two other gems that both set one line of Rails app configuration each.
+gem 'rails_12factor',       group: :production
+
 gem 'capybara'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
