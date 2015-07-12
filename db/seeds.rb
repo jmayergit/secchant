@@ -10,6 +10,7 @@ Forum.create(name: 'SEC Rant')
 Forum.create(name: 'SEC Recruiting')
 Forum.create(name: 'SEC Tickets')
 Forum.create(name: 'Off-Topic Board')
+Forum.create(name: 'Help Board')
 
 teams = ['Alabama', 'Arkansas', 'Auburn', 'Florida', 'Georgia', 'Kentucky', 'LSU',
   'Mississippi St.', 'Missouri', 'Ole Miss', 'South Carolina', 'Tennessee',

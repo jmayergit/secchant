@@ -71,6 +71,11 @@
       <div class="PgBoardName">
         <%= @forum.name %>
       </div>
+      <div class="">
+        forums:<% for forum in @forums %>
+          <li><%= link_to forum.name, forum_show_path(forum) %></li>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
