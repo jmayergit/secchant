@@ -19,6 +19,6 @@ teams = ['Alabama', 'Arkansas', 'Auburn', 'Florida', 'Georgia', 'Kentucky', 'LSU
 len = teams.length
 i = 0
 while i < len
-  Forum.create(name: teams[i])
+  Forum.create(name: teams[i], team_forum: true)
   i += 1
 end

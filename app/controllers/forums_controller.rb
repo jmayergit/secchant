@@ -4,6 +4,7 @@ class ForumsController < ApplicationController
     @forum = Forum.find(params[:id])
 
     # for left navigation
-    @forums = Forum.all
+    @secForums = Forum.where(team_forum: false)
+    @teamForums = Forum.where(team_forum: true)
   end
 end
