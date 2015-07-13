@@ -4,66 +4,19 @@
       <div id="LNavH">
         SEC Forums
       </div>
-      <div id="LNavLi">
-        <a href="/forums/1" class="LNavLink">SEC Rant</a>
-      </div>
-      <div id="LNavLi">
-        <a href="/forums/2" class="LNavLink">SEC Recruiting</a>
-      </div>
-      <div id="LNavLi">
-        <a href="/forums/3" class="LNavLink">SEC Tickets</a>
-      </div>
-      <div id="LNavLi">
-        <a href="/forums/4" class="LNavLink">Off-Topic Board</a>
-      </div>
-      <div id="LNavLi">
-        <a href="/forums/5" class="LNavLink">Help Board</a>
-      </div>
+      <% for forum in @secForums %>
+        <div>
+          <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
+        </div>
+      <% end %>
       <div id="LNavH">
         Team Forums
       </div>
-      <div id="LNavLi">
-        Alabama
-      </div>
-      <div id="LNavLi">
-        Arkansas
-      </div>
-      <div id="LNavLi">
-        Auburn
-      </div>
-      <div id="LNavLi">
-        Florida
-      </div>
-      <div id="LNavLi">
-        Georgia
-      </div>
-      <div id="LNavLi">
-        Kentucky
-      </div>
-      <div id="LNavLi">
-        LSU
-      </div>
-      <div id="LNavLi">
-        Mississippi St.
-      </div>
-      <div id="LNavLi">
-        Missouri
-      </div>
-      <div id="LNavLi">
-        Ole Miss
-      </div>
-      <div id="LNavLi">
-        South Carolina
-      </div>
-      <div id="LNavLi">
-        Tennessee
-      </div>
-      <div id="LNavLi">
-        Texas A&M
-      </div>
-      <div id="LNavLi">
-        Vanderbilt
-      </div>
+      <% for forum in @teamForums %>
+        <div>
+          <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="fourteen wide column">
