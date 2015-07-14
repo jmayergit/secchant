@@ -9,3 +9,15 @@
 form {
   font-size: 15px;
 }
+
+.login {
+  max-width: 300px;
+}
+
+#signIn {
+  color: white;
+  background-color: #10254A;
+  padding: 3px 0px 3px 10px;
+  font-size: 15px;
+
+}
