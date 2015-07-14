@@ -1,38 +1,36 @@
 require 'rails_helper'
 
 feature 'User signs in' do
-  scenario 'with valid credentials' do
+  scenario 'with invalid username' do
     @user = FactoryGirl.create(:user)
 
-    user_signs_in_with(@user.email, @user.password)
+    user_signs_in_with('anothersUsername', @user.password)
 
-    expect(page).to have_content 'Sign out'
+    expect(find('#error_explanation')).to have_content('Invalid user_name or password')
   end
 
-  scenario 'with invalid credentials' do
-    user_signs_in_with('nonregistered@email.com', 'password')
+  scenario 'with invalid password' do
+    @user = FactoryGirl.create(:user)
 
-    expect(page).to have_content 'Sign in'
+    user_signs_in_with(@user.user_name, 'anotherPassword')
+
+    expect(find('#error_explanation')).to have_content('Invalid user_name or password')
+  end
+
+  scenario 'with valid username and password' do
+    @user = FactoryGirl.create(:user)
+
+    user_signs_in_with(@user.user_name, @user.password)
+
+    expect(find('#session')).to have_content('Sign out')
   end
 end
 
-feature 'User signs out' do
-  scenario 'with sign out link' do
-    @user = FactoryGirl.create(:user)
 
-    user_signs_in_with(@user.email, @user.password)
-    expect(page).to have_content 'Sign out'
-
-    click_on 'Sign out'
-    expect(page).to have_content 'Sign in'
-  end
-end
-
-
-def user_signs_in_with(email, password)
+def user_signs_in_with(username, password)
   visit new_user_session_path
 
-  fill_in 'user[email]', :with => email
+  fill_in 'user[user_name]', :with => username
   fill_in 'user[password]', :with => password
   click_on 'Log in'
 end
