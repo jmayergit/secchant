@@ -4,13 +4,20 @@
   box-shadow: 0px 0px 0px 0.2px gray;
   border-radius: 3px;
   background-color: white;
+  padding-bottom: 30px;
 }
 
 form {
   font-size: 15px;
 }
 
+.formFor {
+  font-weight: bold;
+  padding: 0px 0px 5px 5px;
+}
+
 .login {
+  background-color: rgb(237, 237, 237);
   max-width: 300px;
 }
 
