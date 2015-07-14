@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: 'admins/sessions'}
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
 
   get 'forums/:id' => 'forums#show', as: 'forum_show'
   # The priority is based upon order of creation: first created -> highest priority.
