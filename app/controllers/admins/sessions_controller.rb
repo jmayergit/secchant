@@ -2,9 +2,12 @@ class Admins::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+    @secForums = Forum.where(team_forum: false)
+    @teamForums = Forum.where(team_forum: true)
+
+    super
+  end
 
   # POST /resource/sign_in
   # def create
