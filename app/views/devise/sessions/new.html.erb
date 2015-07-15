@@ -1,28 +1,6 @@
 <div class="two column row">
   <div class="four wide column" id="ContentL">
-    <div class="Forums">
-      <div id="ForumsH">
-        SEC Forums
-      </div>
-      <% for forum in @secForums %>
-        <% if forum.name != 'Help Board' %>
-          <div class="Forums1">
-            <%= link_to forum.name, forum_show_path(forum), :class => "homeLNav" %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-
-    <div class="Forums">
-      <div id="ForumsH">
-        Team Forums
-      </div>
-      <% for forum in @teamForums  %>
-        <div class="Forums1">
-          <%= link_to forum.name, forum_show_path(forum), :class => "homeLNav" %>
-        </div>
-      <% end  %>
-    </div>
+    <%= render "devise/shared/forums" %>
   </div>
   <div class="eleven wide column" id="ContentM">
     <!-- Some devise failure messages are set in rails's flash object -->
