@@ -1,22 +1,24 @@
 <div class="two column row">
   <div class="two wide column">
     <div id="LNav">
-      <div id="LNavH">
-        SEC Forums
-      </div>
-      <% for forum in @secForums %>
-        <div>
-          <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
+      <div class="ui sticky">
+        <div id="LNavH">
+          SEC Forums
         </div>
-      <% end %>
-      <div id="LNavH">
-        Team Forums
-      </div>
-      <% for forum in @teamForums %>
-        <div>
-          <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
+        <% for forum in @secForums %>
+          <div>
+            <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
+          </div>
+        <% end %>
+        <div id="LNavH">
+          Team Forums
         </div>
-      <% end %>
+        <% for forum in @teamForums %>
+          <div>
+            <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="fourteen wide column">
