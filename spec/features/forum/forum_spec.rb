@@ -1,5 +1,6 @@
 require 'rails_helper'
 
-feature 'Forum' do
-
+feature 'A Forum' do
+  scenario 'Displays it\'s topics'
+  scenario 'Paginates it\'s topics'
 end
