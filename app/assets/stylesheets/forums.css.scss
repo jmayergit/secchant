@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #LNav {
+  background-color: #ffffff;
   border-top: solid 1px #D3D3D3;
   border-left: solid 1px #D3D3D3;
   border-right: solid 1px #D3D3D3;
@@ -10,8 +11,8 @@
 }
 
 #bodyR {
+  background-color: #ffffff;
   position: relative;
-  min-height: 1000px;
   border-top: solid 1px #D3D3D3;
   border-left: solid 1px #D3D3D3;
   border-right: solid 1px #D3D3D3;
@@ -42,4 +43,15 @@
 .LNavLink:hover {
   color: #3F4041;
   text-decoration: underline;
+}
+
+#thead {
+  color: white;
+  FONT-WEIGHT: bold;
+  background-color: #10254A;
+}
+
+#tdata {
+  color: #000066;
+  font-size: 15px;
 }

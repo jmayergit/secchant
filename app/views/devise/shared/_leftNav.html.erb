@@ -1,0 +1,18 @@
+<div class="ui sticky" id="LNav">
+    <div id="LNavH">
+      SEC Forums
+    </div>
+    <% for forum in @secForums %>
+      <div>
+        <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
+      </div>
+    <% end %>
+    <div id="LNavH">
+      Team Forums
+    </div>
+    <% for forum in @teamForums %>
+      <div>
+        <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
+      </div>
+    <% end %>
+</div>

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :topic do
-    # user
+    user
     forum
 
     sequence(:subject, 1) { |n| "Topic \##{n}"}

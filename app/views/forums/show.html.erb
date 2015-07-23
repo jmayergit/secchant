@@ -1,29 +1,48 @@
 <div class="two column row">
   <div class="two wide column">
-    <div class="ui sticky" id="LNav">
-        <div id="LNavH">
-          SEC Forums
-        </div>
-        <% for forum in @secForums %>
-          <div>
-            <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
-          </div>
-        <% end %>
-        <div id="LNavH">
-          Team Forums
-        </div>
-        <% for forum in @teamForums %>
-          <div>
-            <%= link_to forum.name, forum_show_path(forum), :class => "LNavLink" %>
-          </div>
-        <% end %>
-    </div>
+    <%= render "devise/shared/leftNav" %>
   </div>
   <div class="fourteen wide column">
     <div id="bodyR">
       <div class="PgBoardName">
         <%= @forum.name %>
       </div>
+      <div class="Paging1">
+        <%= link_to "Start Topic", topic_new_path(:controller=>"topics", :action=>"new", "forum"=>"5") %>
+      </div>
+      <table class="ui celled striped table">
+        <thead>
+          <tr><th id="thead">
+            Topic
+          </th>
+          <th id="thead">
+            Started By
+          </th>
+          <th id="thead">
+            Replies
+          </th>
+          <th id="thead">
+            Last Post
+          </th>
+        </tr></thead><tbody>
+          <% @topics.each do |topic| %>
+          <tr>
+            <td id="tdata">
+              <%= topic.subject %>
+            </td>
+            <td id="tdata">
+              <%= topic.user.user_name %>
+            </td>
+            <td id="tdata">
+
+            </td>
+            <td id="tdata">
+
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
