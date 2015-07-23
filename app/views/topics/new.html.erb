@@ -4,7 +4,9 @@
   </div>
   <div class="fourteen wide column">
     <div id="bodyR">
-      <%= @forum.name %>
+      <div id="topicLink">
+        <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %> - Start New Topic
+      </div>
       <% if user_signed_in? %>
         <%= form_for @topic do |f| %>
 
