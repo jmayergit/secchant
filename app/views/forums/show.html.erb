@@ -8,7 +8,7 @@
         <%= @forum.name %>
       </div>
       <div class="Paging1">
-        <%= link_to "Start Topic", topic_new_path(:controller=>"topics", :action=>"new", "forum"=>"5") %>
+        <%= link_to "Start Topic", topic_new_path(:controller=>"topics", :action=>"new", :forum=>@forum.id) %>
       </div>
       <table class="ui celled striped table">
         <thead>

@@ -2,9 +2,7 @@ class TopicsController < ApplicationController
   def new
     @secForums = Forum.where(team_forum: false)
     @teamForums = Forum.where(team_forum: true)
-    puts "-------" * 10
-    puts params
-    puts "-------" * 10
+    @forum = Forum.find(params[:forum])
 
 
     @topic = Topic.new
