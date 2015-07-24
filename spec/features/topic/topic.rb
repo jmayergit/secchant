@@ -1,21 +1,24 @@
 require 'rails_helper'
 
-feature 'Topic' do
-  scenario 'A user must be logged in to create a topic' do
+feature 'New Topic' do
+  scenario 'A user must be logged in to see form' do
     visit_forum
 
     click_on 'Start Topic'
 
     expect(find('#topicError')).to have_content('You must be logged on in order to post on this board.')
   end
-  scenario 'A user can create a topic' do
-    sign_in
 
+  scenario 'A user that is logged in can see form' do
+    sign_in
     visit_forum
+
     click_on 'Start Topic'
 
-    expect(page).to have_content('User is Signed in')
+    expect(find('#bodyR')).to have_content('Subject')
   end
+
+  scenario 'A user can create a topic'
 end
 
 def visit_forum
