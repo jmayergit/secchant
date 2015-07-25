@@ -21,11 +21,7 @@ $(document).on('ready page:load', function(e) {
   $('.ui.sticky')
     .sticky({
       context: '#bodyR',
-      offset: 15
+      offset: 10
     })
-  ;
-
-  $('.PgBoardName')
-    .transition('pulse')
   ;
 });
