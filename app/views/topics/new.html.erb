@@ -4,12 +4,13 @@
   </div>
   <div class="fourteen wide column">
     <div id="bodyR">
-      <%= @topic %>
       <% if user_signed_in? %>
-      <div id="topicLink">
-        <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %> - Start New Topic
-      </div>
+        <div id="topicLink">
+          <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %> - Start New Topic
+        </div>
         <%= form_for @topic do |f| %>
+
+          <%= hidden_field(:forum, :id) %>
 
           <%= f.label :subject %>:
           <%= f.text_field :subject %><br />

@@ -3,9 +3,13 @@ class TopicsController < ApplicationController
     @secForums = Forum.where(team_forum: false)
     @teamForums = Forum.where(team_forum: true)
 
-    @forum = Forum.find(params[:forum])
+    if !params[:forum]
+      redirect_to root_path
+    else
+      @forum = Forum.find(params[:forum])
+    end
+
     @topic = Topic.new
-    @topic.id = @forum.id
   end
 
   def create

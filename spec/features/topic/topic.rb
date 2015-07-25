@@ -1,30 +1,22 @@
 require 'rails_helper'
 
-feature 'New Topic' do
-  scenario 'A user must be logged in to see form' do
-    visit_forum
-
-    click_on 'Start Topic'
+feature 'A user creates a topic' do
+  scenario 'While not signed in' do
+    start_topic
 
     expect(find('#topicError')).to have_content('You must be logged on in order to post on this board.')
   end
 
-  scenario 'A user that is logged in can see form' do
-    sign_in
-    visit_forum
-
-    click_on 'Start Topic'
-
-    expect(find('#bodyR')).to have_content('Subject')
-  end
-
-  scenario 'A user can create a topic'
+  scenario 'With a blank subject'
 end
 
-def visit_forum
+def start_topic
   @forum = FactoryGirl.create(:forum)
+
   visit forum_show_path(@forum)
   expect(find('.PgBoardName')).to have_content('Example Forum')
+
+  click_on 'Start Topic'
 end
 
 def sign_in
