@@ -13,8 +13,19 @@ class TopicsController < ApplicationController
   end
 
   def create
-    puts '-'*100
-    puts params
-    puts '-'*100
+    @topic = Topic.new(params[:topic])
+    @topic.user_id = current_user.id
+
+    if @topic.save
+      redirect_to forum_show_path(Forum.find(params[:topic][:forum_id]))
+    else
+    end
   end
+
+
+  private
+
+    def topic_params
+      params.require(:topic).permit(:subject, :forum_id)
+    end
 end
