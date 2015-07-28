@@ -4,7 +4,7 @@ feature 'A user creates a topic' do
   scenario 'While not signed in' do
     start_topic
 
-    expect(find('#topicError')).to have_content('You must be logged on in order to post on this board.')
+    expect(find('#errorColumn')).to have_content('You must be logged on in order to post on this board.')
   end
 
   scenario 'With a blank subject'

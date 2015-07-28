@@ -6,7 +6,7 @@ feature 'User signs in' do
 
     user_signs_in_with('anothersUsername', @user.password)
 
-    expect(find('#error_explanation')).to have_content('Invalid user_name or password')
+    expect(find('#errorColumn')).to have_content('Invalid user_name or password')
   end
 
   scenario 'with invalid password' do
@@ -14,7 +14,7 @@ feature 'User signs in' do
 
     user_signs_in_with(@user.user_name, 'anotherPassword')
 
-    expect(find('#error_explanation')).to have_content('Invalid user_name or password')
+    expect(find('#errorColumn')).to have_content('Invalid user_name or password')
   end
 
   scenario 'with valid username and password' do

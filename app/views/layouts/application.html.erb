@@ -87,6 +87,16 @@
     More
   </div>
 
+  <% if flash.keys.length > 0 %>
+    <div class="sixteen wide center aligned column" id="errorColumn">
+      <% flash.keys.each do |key| %>
+        <div id="flash">
+          <%= flash[key] %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
     <%= yield %>
 
 </div>
