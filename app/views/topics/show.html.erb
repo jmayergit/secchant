@@ -1,0 +1,35 @@
+<div class="two column row">
+  <div class="two wide column">
+    <%= render "devise/shared/leftNav" %>
+  </div>
+  <div class="fourteen wide column">
+    <div id="bodyR">
+      <table class="ui celled striped table">
+        <thead>
+          <tr>
+            <th id="thead">
+              Posted By
+            </th>
+            <th id="thead">
+              Message
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+            <tr>
+              <td id="tDataUser">
+                <%= post.user.user_name  %>
+              </td>
+              <td id="tDataMessage">
+                <span id="subject"> <%= post.topic.subject %> </span> <span id="date"> (Posted on <%= post.created_at %>) </span>
+                <div class="ui divider"></div>
+                <%= post.message %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

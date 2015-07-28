@@ -8,7 +8,7 @@
         <%= @forum.name %>
       </div>
       <div class="Paging1">
-        <%= link_to "Start Topic", topic_new_path(:controller=>"topics", :action=>"new", :forum=>@forum.id) %>
+        <%= link_to "Start Topic", topic_new_path(:controller=>"topics", :action=>"new", :forum=>@forum.id), :class => "pagingLink" %>
       </div>
       <table class="ui celled striped table">
         <thead>
@@ -28,16 +28,16 @@
           <% @topics.each do |topic| %>
           <tr>
             <td id="tdata">
-              <%= topic.subject %>
+              <%= link_to topic.subject, topic_show_path(topic) %>
             </td>
             <td id="tdata">
               <%= topic.user.user_name %>
             </td>
             <td id="tdata">
-
+              <%= topic.posts.count - 1 %>
             </td>
             <td id="tdata">
-
+              <%= topic.posts.last.user.user_name %>
             </td>
           </tr>
           <% end %>
