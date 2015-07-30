@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   post '/topics' => 'topics#create'
 
   get '/topics/:id' => 'topics#show', as: 'topic_show'
+
+  get '/topics/:id/edit' => 'topics#edit', as: 'topic'
+
+  patch '/topics/:id/edit' => 'topics#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
