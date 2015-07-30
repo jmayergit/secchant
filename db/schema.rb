@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722174526) do
+ActiveRecord::Schema.define(version: 20150730190145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20150722174526) do
     t.integer  "forum_id"
     t.string   "subject"
     t.integer  "user_id"
+    t.boolean  "anchored"
+    t.boolean  "stickied"
   end
 
   create_table "users", force: true do |t|

@@ -28,7 +28,7 @@
           <% @topics.each do |topic| %>
           <tr>
             <td id="tdata">
-              <%= link_to topic.subject, topic_show_path(topic) %>
+              <%= link_to topic.subject, topic_show_path(topic), :class => 'pagingLink' %>
             </td>
             <td id="tdata">
               <%= topic.user.user_name %>
