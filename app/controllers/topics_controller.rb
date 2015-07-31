@@ -4,8 +4,6 @@ class TopicsController < ApplicationController
   before_action :format_post_params, only: :create
 
   def new
-    @secForums = Forum.where(team_forum: false)
-    @teamForums = Forum.where(team_forum: true)
     @forum = Forum.find(params[:forum])
 
     @topic = Topic.new
@@ -24,17 +22,11 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @secForums = Forum.where(team_forum: false)
-    @teamForums = Forum.where(team_forum: true)
-
     @topic = Topic.find(params[:id])
     @posts = @topic.posts
   end
 
   def edit
-    @secForums = Forum.where(team_forum: false)
-    @teamForums = Forum.where(team_forum: true)
-
     @topic = Topic.find(params[:id])
     @post = @topic.posts.first
     @forum = @topic.forum
