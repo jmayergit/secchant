@@ -1,6 +1,6 @@
 <%= form_for @topic do |topic_form| %>
 
-  <%= hidden_field(:forum, :id) %>
+  <%= topic_form.hidden_field :forum_id, :value => @forum.id %>
 
   <%= topic_form.label :subject %>:
   <%= topic_form.text_field :subject %><br />

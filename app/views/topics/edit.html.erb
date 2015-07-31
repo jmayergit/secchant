@@ -6,14 +6,12 @@
     <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %>
     <%= form_for @topic do |topic_form| %>
 
-      <%= hidden_field(:forum, :id) %>
-
       <%= topic_form.label :subject %>:
       <%= topic_form.text_field :subject %><br />
 
-      <%= topic_form.fields_for @post do |ff| %>
+      <%= topic_form.fields_for :posts do |post| %>
         Message: <br />
-        <%= ff.text_area :message %>
+        <%= post.text_area :message %>
 
       <% end %>
 

@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get '/topics/:id/edit' => 'topics#edit', as: 'topic'
 
   patch '/topics/:id/edit' => 'topics#update'
+
+  post '/topics/:id/anchor' => 'topics#anchor'
+
+  post '/topics/:id/sticky' => 'topics#sticky'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

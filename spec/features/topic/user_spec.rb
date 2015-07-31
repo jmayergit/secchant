@@ -7,7 +7,29 @@ feature 'A user creates a topic' do
     expect(find('#errorColumn')).to have_content('You must be logged on in order to post on this board.')
   end
 
-  scenario 'With a blank subject'
+  scenario 'With a blank subject' do
+    sign_in
+    start_topic
+
+    click_on 'Create Topic'
+
+    expect(find('#errorColumn')).to have_content('Subject cannot be blank.')
+  end
+
+  scenario 'While signed in with a non-blank subject' do
+    sign_in
+    start_topic
+
+    fill_in 'topic[subject]', :with => 'A non-blank subject'
+    click_on 'Create Topic'
+
+    expect(find('#subject')).to have_content('A non-blank subject')
+  end
+end
+
+feature 'A user edites a topic' do
+  scenario 'With a blank subject' do
+  end
 end
 
 def start_topic
@@ -18,6 +40,7 @@ def start_topic
 
   click_on 'Start Topic'
 end
+
 
 def sign_in
   @user = FactoryGirl.create(:user)
