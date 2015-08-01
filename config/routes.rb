@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'panel/show'
-
   devise_for :admins, controllers: { sessions: 'admins/sessions'}
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
 
@@ -23,6 +21,14 @@ Rails.application.routes.draw do
   get '/panel' => 'panel#show', as: 'admin_panel'
 
   post '/panel/mod' => 'panel#mod', as: 'toggle_mod'
+
+  get '/topics/:topic_id/posts/:reply_id/new' => 'posts#new', as: 'posts_new'
+
+  post '/topics/:topic_id/posts' => 'posts#create', as: 'posts'
+
+  get '/topics/:topic_id/posts/:id/edit' => 'posts#edit', as: 'posts_edit'
+
+  patch '/topics/:topic_id/posts/:id' => 'posts#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

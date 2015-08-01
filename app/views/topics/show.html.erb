@@ -30,7 +30,7 @@
                     <% if current_user.id == post.user_id %>
                       <%= link_to "Edit", topic_path(post.topic.id) %>
                     <% end %>
-                    reply 
+                    <%= link_to "Reply", posts_new_path(:topic_id=>params[:id], :reply_id=>post.id) %>
                     request admin
                   <% end %>
               </td>
