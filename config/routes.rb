@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   post '/topics/:id/sticky' => 'topics#sticky'
 
   get '/panel' => 'panel#show', as: 'admin_panel'
+
+  post '/panel/mod' => 'panel#mod', as: 'toggle_mod'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,6 +1,6 @@
 <div class="sixteen wide column">
   <div class="">
-    <table class="ui inverted orange table">
+    <table class="ui inverted black table">
       <thead>
         <tr>
           <th>user_name</th>
@@ -23,7 +23,24 @@
           <td> <%= user.current_sign_in_ip %> </td>
           <td> <%= user.last_sign_in_ip %> </td>
           <td> <%= user.sign_in_count %> </td>
-          <td> <%= user.moderator %> </td>
+          <td>
+            <%= form_tag(controller: "panel", action: "mod", method: "post") do %>
+            <div class="ui mini labeled input">
+              <%= hidden_field(:user, :id, :value => user.id) %>
+
+              <% if user.moderator == true %>
+                <div class="ui blue label">
+              <% else %>
+                <div class="ui red label">
+              <% end %>
+                  <%= user.moderator %>
+                </div>
+
+                <%= submit_tag("Toggle") %>
+            </div>
+
+            <% end %>
+          </td>
         </tr>
         <% end %>
       </tbody>
