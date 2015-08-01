@@ -6,16 +6,16 @@
     <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %>
     <%= form_for @topic do |topic_form| %>
 
-      <%= topic_form.label :subject %>:
+      <%= topic_form.label :subject %><br />
       <%= topic_form.text_field :subject %><br />
 
       <%= topic_form.fields_for :posts do |post| %>
-        Message: <br />
+      <span id="labelMessage">  Message </span> <br />
         <%= post.text_area :message %>
 
       <% end %>
 
-      <%= topic_form.submit %>
+      <br /><%= topic_form.submit %>
     <% end %>
   </div>
 </div>

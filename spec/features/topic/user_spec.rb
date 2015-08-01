@@ -27,11 +27,6 @@ feature 'A user creates a topic' do
   end
 end
 
-feature 'A user edites a topic' do
-  scenario 'With a blank subject' do
-  end
-end
-
 def start_topic
   @forum = FactoryGirl.create(:forum)
 

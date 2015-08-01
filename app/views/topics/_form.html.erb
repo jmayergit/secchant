@@ -2,14 +2,14 @@
 
   <%= topic_form.hidden_field :forum_id, :value => @forum.id %>
 
-  <%= topic_form.label :subject %>:
+  <%= topic_form.label :subject %><br />
   <%= topic_form.text_field :subject %><br />
 
   <%= topic_form.fields_for :posts_attributes do |posts_attributes| %>
-    Message: <br />
+    <span id="labelMessage"> Message </span> <br />
     <%= posts_attributes.text_area :message %>
 
   <% end %>
 
-  <%= topic_form.submit %>
+  <br /><%= topic_form.submit %>
 <% end %>

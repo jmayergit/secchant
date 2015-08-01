@@ -78,9 +78,23 @@ a {
 }
 
 #ddmenu {
+  max-height: 46px;
   color: white;
   background-color: #00133F;
   font-size: 15px;
+}
+
+.ui.simple.dropdown:hover > .menu {
+  background-color: #F4F4F4;
+}
+
+.ui.simple.dropdown
+.menu {
+  padding-top: 15px;
+}
+
+.ui.dropdown {
+  padding-bottom: 13px;
 }
 
 #MenuHeader {
