@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'panel/show'
+
   devise_for :admins, controllers: { sessions: 'admins/sessions'}
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
 
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   post '/topics/:id/anchor' => 'topics#anchor'
 
   post '/topics/:id/sticky' => 'topics#sticky'
+
+  get '/panel' => 'panel#show', as: 'admin_panel'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

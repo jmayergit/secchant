@@ -107,16 +107,20 @@ a {
   color: #3F4041;
 }
 
-#GodModeNotice {
-  font-size: 15px;
-  color: #ebc21f;
-  font-style: oblique;
-  float: right;
-  text-shadow: 0px 0px 10px;
-}
-
 #errorColumn {
   font-weight: bold;
   color: white;
   background-color: red;
+}
+
+.panelLink {
+  font-size: 15px;
+  font-style: oblique;
+  float: right;
+  text-shadow: 0px 0px 10px;
+  color: #ffcc33;
+}
+
+.panelLink:hover {
+  color: #ffff00;
 }

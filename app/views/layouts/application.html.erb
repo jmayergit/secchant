@@ -14,7 +14,7 @@
     <%= link_to "SECCHANT.COM", root_path %>
     <% if admin_signed_in? %>
       <% if current_admin.god_mode? %>
-        <span id="GodModeNotice">God Mode</span>
+        <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
       <% end %>
     <% end %>
   </div>

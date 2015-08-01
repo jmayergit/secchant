@@ -1,0 +1,32 @@
+<div class="sixteen wide column">
+  <div class="">
+    <table class="ui inverted orange table">
+      <thead>
+        <tr>
+          <th>user_name</th>
+          <th>email</th>
+          <th>topics</th>
+          <th>posts</th>
+          <th>current ip</th>
+          <th>last ip</th>
+          <th>sign in count</th>
+          <th>moderator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td> <%= user.user_name %> </td>
+          <td> <%= user.email %> </td>
+          <td> <%= user.topics.count %> </td>
+          <td> <%= user.posts.count %> </td>
+          <td> <%= user.current_sign_in_ip %> </td>
+          <td> <%= user.last_sign_in_ip %> </td>
+          <td> <%= user.sign_in_count %> </td>
+          <td> <%= user.moderator %> </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
