@@ -5,4 +5,12 @@ class Topic < ActiveRecord::Base
   accepts_nested_attributes_for :posts
 
   validates :subject, presence: true
+
+  def self.op?(topic, post)
+    op = topic.posts.first
+    if op == post
+      return true
+    end
+    false
+  end
 end

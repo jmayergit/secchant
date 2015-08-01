@@ -9,4 +9,10 @@ class User < ActiveRecord::Base
 
   validates_presence_of :user_name
   validates_uniqueness_of :user_name
+
+  def self.format_date(datetime)
+    datetime = datetime.to_s
+    regex = /[[:digit:]]{4}-{1}[[:digit:]]{2}-[[:digit:]]{2}/
+    regex.match(datetime).to_s
+  end
 end

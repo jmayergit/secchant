@@ -9,9 +9,10 @@
       <%= topic_form.label :subject %><br />
       <%= topic_form.text_field :subject %><br />
 
-      <%= topic_form.fields_for :posts do |post| %>
-      <span id="labelMessage">  Message </span> <br />
-        <%= post.text_area :message %>
+      <%= topic_form.fields_for @post do |post| %>
+
+          <span id="labelMessage">  Message </span> <br />
+          <%= post.text_area :message %>
 
       <% end %>
 
