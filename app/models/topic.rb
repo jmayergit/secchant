@@ -6,6 +6,8 @@ class Topic < ActiveRecord::Base
 
   validates :subject, presence: true
 
+  self.per_page = 20
+
   def self.op?(topic, post)
     op = topic.posts.first
     if op == post

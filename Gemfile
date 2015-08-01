@@ -16,6 +16,8 @@ end
 # This gem does nothing but require two other gems that both set one line of Rails app configuration each.
 gem 'rails_12factor',       group: :production
 
+gem 'will_paginate', '~> 3.0.6'
+
 # heroku uses this ruby version
 # gem 'ruby', '2.0.0'
 

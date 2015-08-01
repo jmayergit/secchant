@@ -4,12 +4,13 @@
   </div>
   <div class="fourteen wide column">
     <div id="bodyR">
-      <div class="PgBoardName">
-        <%= @forum.name %>
-      </div>
-      <div class="Paging1">
-        <%= link_to "Start Topic", topic_new_path(:forum=>@forum.id), :class => "pagingLink" %>
-      </div>
+
+        <%= link_to @forum.name, forum_show_path(@forum), :class => 'PgBoardName' %>
+        <div class="Paging1">
+          <%= link_to "Start Topic", topic_new_path(:forum=>@forum.id), :class => "pagingLink" %>
+          <%= will_paginate @topics %>
+        </div>
+
       <table class="ui celled striped table">
         <thead>
           <tr><th id="thead">

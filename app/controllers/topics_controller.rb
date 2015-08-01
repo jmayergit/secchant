@@ -23,7 +23,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @posts = @topic.posts.order(created_at: :asc)
+    @posts = @topic.posts.order(created_at: :asc).page(params[:page])
   end
 
   def edit

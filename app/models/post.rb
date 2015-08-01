@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :topic
 
+  self.per_page = 20
+
   def self.new_replies(post, reply_id)
     replies = post.replies
     if replies == nil
