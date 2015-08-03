@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#sixteenWideColumn {
+  background-color: white;
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+#twoColumnRow {
+  padding-top: 0px;
+}
+
+#twoWideColumn {
+  padding-left: 0px;
+}
+
+#fourteenWideColumn {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 #LNav {
   background-color: #ffffff;
   border-top: solid 1px #D3D3D3;
@@ -9,7 +28,7 @@
   border-right: solid 1px #D3D3D3;
   border-bottom: solid 1px #D3D3D3;
   padding: 10px 0px 0px 10px;
-  height: 485px;
+  height: 100vh;
 }
 
 #bodyR {
