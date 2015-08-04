@@ -1,4 +1,16 @@
 == README
 Testing
 
+  Rails 4.1.8 Application
+
+  pg database
+
+  tested with Rspec, Capybara, and FactoryGirl
+
+  Clone of http://www.secrant.com/
+
+  Forum for Southeastern Conference Discussion
+
+  Gathering place for fans to debate the latest in news, games, and recruiting
+
   To run tests from command line run 'rspec'
