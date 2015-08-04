@@ -5,13 +5,15 @@
   </div>
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
-      <%= form_for @post do |f| %>
-        <%= hidden_field(:reply_post, :id) %>
-        <span id="labelMessage"> <%= f.label :message %> </span> <br />
-        <%= f.text_area :message %><br />
+      <%= form_for @post do |form_for| %>
 
-        <%= f.submit %>
+        <span id="labelMessage"> <%= form_for.label :message %> </span> <br />
+        <%= form_for.text_area :message %> <br />
+
+        <%= form_for.submit %>
       <% end %>
     </div>
+
   </div>
+
 </div>

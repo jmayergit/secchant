@@ -26,9 +26,9 @@ Rails.application.routes.draw do
 
   post '/topics/:topic_id/posts' => 'posts#create', as: 'posts'
 
-  get '/topics/:topic_id/posts/:id/edit' => 'posts#edit', as: 'posts_edit'
+  get '/topics/posts/:id/edit' => 'posts#edit', as: 'posts_edit'
 
-  patch '/topics/:topic_id/posts/:id' => 'posts#update'
+  patch '/topics/posts/:id' => 'posts#update', as: 'post'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -23,11 +23,17 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    @post = Post.find(params[:id])
   end
 
   def update
-    
+    @post = Post.find(params[:id])
+    if @post.update(posts_params)
+      redirect_to topic_show_path(@post.topic)
+    else
+      flash[:error] = "Unable to update post."
+      redirect_to root_path
+    end
   end
 
   private

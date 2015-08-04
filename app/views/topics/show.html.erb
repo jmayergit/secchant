@@ -1,8 +1,9 @@
-<div class="two column row">
-  <div class="two wide column">
+<div class="sixteen wide column" id="sixteenWideColumn"></div>
+<div class="two column row" id="twoColumnRow">
+  <div class="two wide column" id="twoWideColumn">
     <%= render "devise/shared/leftNav" %>
   </div>
-  <div class="fourteen wide column">
+  <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
 
       <%= link_to @topic.forum.name, forum_show_path(@topic.forum), :class => "PgBoardName" %>
@@ -42,7 +43,7 @@
                       <% if Topic.op?(@topic, post) %>
                         <%= link_to "Edit", topic_path(post.topic.id), :class => 'custButton' %>
                       <% else %>
-                        "Post edit"
+                        <%= link_to "Edit", posts_edit_path(post), :class => 'custButton' %>
                       <% end %>
                     <% end %>
                     <%= link_to "Reply", posts_new_path(:topic_id=>params[:id], :reply_id=>post.id), :class => 'custButton' %>

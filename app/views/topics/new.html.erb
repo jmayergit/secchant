@@ -1,8 +1,9 @@
-<div class="two column row">
-  <div class="two wide column">
+<div class="sixteen wide column" id="sixteenWideColumn"></div>
+<div class="two column row" id="twoColumnRow">
+  <div class="two wide column" id="twoWideColumn">
     <%= render "devise/shared/leftNav" %>
   </div>
-  <div class="fourteen wide column">
+  <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
       <div id="topicLink">
         <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %> - Start New Topic
