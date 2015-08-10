@@ -18,6 +18,8 @@ gem 'rails_12factor',       group: :production
 
 gem 'will_paginate', '~> 3.0.6'
 
+gem 'ruby-bbcode'
+
 # heroku uses this ruby version
 # gem 'ruby', '2.0.0'
 

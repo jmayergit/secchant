@@ -10,8 +10,39 @@
         <span id="labelMessage"> <%= f.label :message %> </span> <br />
         <%= f.text_area :message %><br />
 
-        <%= f.submit %>
+        <div class="submit">
+          <%= f.submit %>
+        </div>
       <% end %>
+      <%= render "/posts/bbcode" %><br /><br />
+
+      You are replying to the following post:
+      <table class="ui celled striped table">
+        <thead>
+          <tr>
+            <th id="thead">
+              Posted By
+            </th>
+            <th id="thead">
+              Message
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div id="tData">
+                <%= @reply_post.user.user_name %>
+              </div>
+            </td>
+            <td>
+              <span id="subject"> <%= @reply_post.topic.subject %> </span>
+              <div class="ui divider"></div>
+              <%== @reply_post.message.bbcode_to_html %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

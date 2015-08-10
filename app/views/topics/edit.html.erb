@@ -7,19 +7,19 @@
     <div id="bodyR">
       <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %>
       <%= form_for @topic do |topic_form| %>
-
         <%= topic_form.label :subject %><br />
         <%= topic_form.text_field :subject %><br />
 
         <%= topic_form.fields_for @post do |post| %>
-
-            <span id="labelMessage">  Message </span> <br />
-            <%= post.text_area :message %>
-
+          <span id="labelMessage">  Message </span> <br />
+          <%= post.text_area :message %>
         <% end %>
 
-        <br /> <%= topic_form.submit %>
+        <div class="submit">
+          <%= topic_form.submit %>
+        </div>
       <% end %>
+      <%= render "/posts/bbcode" %>
     </div>
   </div>
 </div>

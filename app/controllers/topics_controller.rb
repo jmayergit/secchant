@@ -22,6 +22,9 @@ class TopicsController < ApplicationController
   end
 
   def show
+    puts '$'*100
+    puts params
+    puts '$'*100
     @topic = Topic.find(params[:id])
     @posts = @topic.posts.order(created_at: :asc).page(params[:page])
   end
@@ -36,6 +39,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
 
     if @topic.update(topic_params)
+      @topic.posts.first.update(message: params[:topic][:post][:message])
       redirect_to topic_show_path(@topic)
     else
       flash[:error] = "Subject cannot be blank."

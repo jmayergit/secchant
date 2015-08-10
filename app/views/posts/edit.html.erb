@@ -10,8 +10,11 @@
         <span id="labelMessage"> <%= form_for.label :message %> </span> <br />
         <%= form_for.text_area :message %> <br />
 
-        <%= form_for.submit %>
+        <div class="submit">
+          <%= form_for.submit %>
+        </div>
       <% end %>
+      <%= render "/posts/bbcode" %>
     </div>
 
   </div>
