@@ -26,8 +26,16 @@
   FONT-WEIGHT: bold;
 }
 
+#postedBy {
+  width: 20%;
+}
+
+#message {
+  width: 80%;
+}
+
 #tDataUser {
-  position: absolute;
+  padding-bottom: 150px;
 }
 
 #tDataMessage {
@@ -77,6 +85,12 @@ label[for=topic_subject] {
 
 .userInfo {
   font-size: 11px;
+}
+
+.pText {
+  word-wrap: break-word;
+  font-family: arial;
+  min-height: 102px;
 }
 
 .custButton {
