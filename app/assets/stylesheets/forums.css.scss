@@ -76,21 +76,29 @@
   background-color: #10254A;
 }
 
+.topic {
+  width: 60%;
+}
+
 #tdata {
   color: #000066;
   font-size: 15px;
 }
 
-.Paging1 {
+.pagingLink {
   padding-left: 3px;
+  float: left;
   color: #000066;
   FONT-WEIGHT: bold;
 }
 
-.pagingLink {
+.pagingLink:hover {
   color: #000066;
 }
 
-.pagingLink:hover {
+.pagination {
   color: #000066;
+  FONT-WEIGHT: bold;
+  display: inline;
+  float: right;
 }

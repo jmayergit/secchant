@@ -8,7 +8,9 @@
       <div id="topicLink">
         <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %> - Start New Topic
       </div>
+      <div id="bbcodeTopic">
+        <%= render "/posts/bbcode" %>
+      </div>
       <%= render "topics/form" %>
-      <%= render "/posts/bbcode" %>
   </div>
 </div>

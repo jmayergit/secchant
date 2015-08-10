@@ -6,12 +6,10 @@
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
 
-      <%= link_to @topic.forum.name, forum_show_path(@topic.forum), :class => "PgBoardName" %>
+      <%= link_to @topic.forum.name, forum_show_path(@topic.forum), :class => "PgBoardName" %> <br /> <br />
 
-      <div class="">
-
-
-      </div>
+      <%= link_to "Return", forum_show_path(@topic.forum), :class => "pagingLink" %>
+      <!-- <%= link_to %> -->
       <div class="pagination">
         <%= will_paginate @posts %>
       </div>
