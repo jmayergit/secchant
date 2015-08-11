@@ -11,7 +11,17 @@ $(document).on('ready page:load', function(e) {
 
     var link = prompt("Enter a valid URL: (must include http://):");
 
-    var new_msg = current_msg + "";
+    if( link != null) {
+      var title = prompt("Enter your link title:", "LINK");
+
+      if( title === "") {
+        title = "LINK";
+      }
+
+      new_msg = current_msg + "[url=" + link + "]" + title + "[/url]";
+
+      $('textarea').get(0).value = new_msg;
+    }
   })
 
   $("button[id='img']").click(function(e) {
