@@ -27,13 +27,11 @@
         <tbody>
           <% @posts.each do |post| %>
             <tr>
-              <td id="postedBy">
-                <div id="tDataUser">
-                  <span class="postUserName"> <%= post.user.user_name %> </span> <br />
-                  <div class="userInfo">
-                    Member since  <%= User.format_date(post.user.created_at) %><br />
-                    <%= post.user.posts.count %> posts
-                  </div>
+              <td id="verticalAlign">
+                <span class="postUserName"> <%= post.user.user_name %> </span> <br />
+                <div class="userInfo">
+                  Member since  <%= User.format_date(post.user.created_at) %><br />
+                  <%= post.user.posts.count %> posts
                 </div>
               </td>
               <td id="message">

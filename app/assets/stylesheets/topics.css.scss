@@ -113,7 +113,11 @@ label[for=topic_subject] {
 }
 
 #bbcodeTopic {
-  position: absolute;
-  padding-left: 450px;
   padding-top: 70px;
+  float: right;
+  padding-right: 300px;
+}
+
+#verticalAlign {
+  vertical-align: top;
 }
