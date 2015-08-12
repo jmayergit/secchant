@@ -28,6 +28,9 @@
           <% @topics.each do |topic| %>
           <tr>
             <td class="topic" id="tdata">
+              <% if topic.stickied %>
+                Stickied
+              <% end %>
               <%= link_to topic.subject, topic_show_path(topic), :class => 'pagingLink' %>
               <% if current_user.moderator %>
                 <div class="modLinks">

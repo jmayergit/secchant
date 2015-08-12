@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     if @post.save
       new_replies = Post.new_replies(@reply_post, @post.id)
       @reply_post.update(replies: new_replies)
+      @topic.update(last_post_created_at: DateTime.now)
 
       redirect_to topic_show_path(@topic)
     else

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811204951) do
+ActiveRecord::Schema.define(version: 20150812201234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20150811204951) do
     t.integer  "user_id"
     t.boolean  "stickied"
     t.datetime "anchored"
+    t.datetime "last_post_created_at"
   end
 
   create_table "users", force: true do |t|
