@@ -22,9 +22,6 @@ class TopicsController < ApplicationController
   end
 
   def show
-    puts '$'*100
-    puts params
-    puts '$'*100
     @topic = Topic.find(params[:id])
     @posts = @topic.posts.order(created_at: :asc).page(params[:page])
   end
@@ -47,6 +44,25 @@ class TopicsController < ApplicationController
     end
   end
 
+  def sticky
+    @topic = Topic.find(params["topic"]["id"])
+
+    if @topic.stickied == true
+      @topic.update(stickied: false)
+    else
+      @topic.update(stickied: true)
+    end
+
+    redirect_to forum_show_path(@topic.forum.id)
+  end
+
+  def anchor
+    @topic = Topic.find(params["topic"]["id"])
+
+
+
+    redirect_to forum_show_path(@topic.forum.id)
+  end
 
   private
 

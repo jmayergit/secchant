@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
   patch '/topics/:id/edit' => 'topics#update'
 
-  post '/topics/:id/anchor' => 'topics#anchor'
+  post '/topics/sticky' => 'topics#sticky', as: 'sticky'
 
-  post '/topics/:id/sticky' => 'topics#sticky'
+  post '/topics/anchor' => 'topics#anchor', as: 'anchor'
 
   get '/panel' => 'panel#show', as: 'admin_panel'
 

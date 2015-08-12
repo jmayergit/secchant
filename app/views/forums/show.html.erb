@@ -29,6 +29,20 @@
           <tr>
             <td class="topic" id="tdata">
               <%= link_to topic.subject, topic_show_path(topic), :class => 'pagingLink' %>
+              <% if current_user.moderator %>
+                <div class="modLinks">
+                  <%= form_tag(controller: "topics", action: "sticky", method: "post") do %>
+                    <%= hidden_field(:topic, :id, :value => topic.id) %>
+
+                    <%= submit_tag("Sticky") %>
+                  <% end %>
+                  <%= form_tag(controller: "topics", action: "anchor", method: "post") do %>
+                    <%= hidden_field(:topic, :id, :value => topic.id) %>
+
+                    <%= submit_tag("Anchor") %>
+                  <% end %>
+                </div>
+              <% end %>
             </td>
             <td id="tdata">
               <%= topic.user.user_name %>

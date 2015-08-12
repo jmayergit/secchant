@@ -9,7 +9,6 @@
       <%= link_to @topic.forum.name, forum_show_path(@topic.forum), :class => "PgBoardName" %> <br /> <br />
 
       <%= link_to "Return", forum_show_path(@topic.forum), :class => "pagingLink" %>
-      <!-- <%= link_to %> -->
       <div class="pagination">
         <%= will_paginate @posts %>
       </div>
@@ -50,6 +49,7 @@
                       <% end %>
                     <% end %>
                     <%= link_to "Reply", posts_new_path(:topic_id=>params[:id], :reply_id=>post.id), :class => 'custButton' %>
+
                     request admin
                   <% end %>
               </td>
