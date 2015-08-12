@@ -29,7 +29,7 @@
           <tr>
             <td class="topic" id="tdata">
               <% if topic.stickied %>
-                Stickied
+                <%= image_tag "sticky.gif", :id => "sticky" %>
               <% end %>
               <%= link_to topic.subject, topic_show_path(topic), :class => 'pagingLink' %>
               <% if current_user.moderator %>

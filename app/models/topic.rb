@@ -3,6 +3,7 @@ class Topic < ActiveRecord::Base
   belongs_to :forum
   has_many :posts, dependent: :destroy
   accepts_nested_attributes_for :posts
+  before_create :set_last_post_created_at_to_now
 
   validates :subject, presence: true
 
@@ -14,5 +15,9 @@ class Topic < ActiveRecord::Base
       return true
     end
     false
+  end
+
+  def set_last_post_created_at_to_now
+    self.last_post_created_at = DateTime.now()
   end
 end
