@@ -47,11 +47,14 @@ class TopicsController < ApplicationController
   def sticky
     @topic = Topic.find(params["topic"]["id"])
 
-    if @topic.stickied == true
-      @topic.update(stickied: false)
-    else
-      @topic.update(stickied: true)
-    end
+      if @topic.stickied == false
+        @topic.update(stickied: true)
+        if @topic.anchored == true
+          @topic.update(anchored: false)
+        end
+      else
+        @topic.update(stickied: false)
+      end
 
     redirect_to forum_show_path(@topic.forum.id)
   end
@@ -59,7 +62,14 @@ class TopicsController < ApplicationController
   def anchor
     @topic = Topic.find(params["topic"]["id"])
 
-
+    if @topic.anchored == false
+      @topic.update(anchored: true)
+      if @topic.stickied == true
+        @topic.update(stickied: false)
+      end
+    else
+      @topic.update(anchored: false)
+    end
 
     redirect_to forum_show_path(@topic.forum.id)
   end
