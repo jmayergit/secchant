@@ -15,46 +15,56 @@
           <tr><th id="thead">
             Topic
           </th>
+
           <th id="thead">
             Started By
           </th>
+
           <th id="thead">
             Replies
           </th>
+
           <th id="thead">
             Last Post
           </th>
-        </tr></thead><tbody>
+        </tr>
+      </thead>
+
+        <tbody>
           <% @topics.each do |topic| %>
           <tr>
+
             <td class="topic" id="tdata">
               <% if topic.stickied %>
                 <%= image_tag "sticky.gif", :id => "sticky" %>
               <% end %>
               <%= link_to topic.subject, topic_show_path(topic), :class => 'pagingLink' %>
+
               <% if current_user.moderator %>
                 <div class="modLinks">
                   <%= form_tag(controller: "topics", action: "sticky", method: "post") do %>
                     <%= hidden_field(:topic, :id, :value => topic.id) %>
-
                     <%= submit_tag("Sticky") %>
                   <% end %>
                   <%= form_tag(controller: "topics", action: "anchor", method: "post") do %>
                     <%= hidden_field(:topic, :id, :value => topic.id) %>
-
                     <%= submit_tag("Anchor") %>
                   <% end %>
                 </div>
               <% end %>
+
             </td>
+
             <td id="tdata">
               <%= topic.user.user_name %>
             </td>
-            <td id="tdata">
+
+            <td class="replies" id="tdata">
               <%= topic.posts.count - 1 %>
             </td>
+
             <td id="tdata">
-              <%= topic.posts.last.user.user_name %>
+              <%= link_to Post.create_description(topic.posts.last), topic_show_path(topic, :page => Post.find_page(topic.posts.last)) %>
             </td>
           </tr>
           <% end %>
