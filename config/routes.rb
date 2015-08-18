@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: 'admins/sessions'}
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
 
+  get '/users/index/:id' => 'information#index' , as: 'user_index'
+
   get '/forums/:id' => 'forums#show', as: 'forum_show'
 
   get '/topics/new' => 'topics#new', as: 'topic_new'

@@ -35,6 +35,20 @@ a {
   font-size: 15px;
 }
 
+#userNav {
+  padding: 7px 0px 7px 32px;
+  background-color: #111;
+  color: gray;
+}
+
+#userNavLink {
+  color: gray;
+}
+
+#userNavLink:hover {
+  color: gray;
+}
+
 #session {
   color: white;
 }

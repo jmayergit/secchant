@@ -18,11 +18,7 @@ class Post < ActiveRecord::Base
   end
 
   '''
-  Finds a posts index relative to other posts in topic
-
-  Used in Forum show page to navigate to last post and
-  in User posts index to navigate to a post that is not
-  necessarily last -- requiring iteration
+  Topics are paginated -- this methods finds the page a post is on
   '''
   def self.find_page(aPost)
     posts = aPost.topic.posts.order(:created_at)

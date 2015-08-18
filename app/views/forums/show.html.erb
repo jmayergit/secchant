@@ -55,16 +55,16 @@
 
             </td>
 
-            <td id="tdata">
+            <td id="tdata" class="startedBy">
               <%= topic.user.user_name %>
             </td>
 
-            <td class="replies" id="tdata">
+            <td id="tdata" class="replies" >
               <%= topic.posts.count - 1 %>
             </td>
 
-            <td id="tdata">
-              <%= link_to Post.create_description(topic.posts.last), topic_show_path(topic, :page => Post.find_page(topic.posts.last)) %>
+            <td id="tdata" class="lastPost">
+              <%= link_to Post.create_description(topic.posts.last), topic_show_path(topic, :page => Post.find_page(topic.posts.last), anchor: "post-#{topic.posts.last.id}"), :class => "findPage" %>
             </td>
           </tr>
           <% end %>

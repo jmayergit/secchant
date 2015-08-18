@@ -10,6 +10,14 @@
 
 <div class="ui grid" id="grid">
 
+  <div class="sixteen wide column" id="userNav">
+    <% if user_signed_in? %>
+      <%= link_to "My Posts", user_index_path(current_user), id: "userNavLink" %>
+    <% else %>
+      Sign in | Regist
+    <% end %>
+  </div>
+
   <div class="eight wide column" id="TopNavL">
     <%= link_to "SECCHANT.COM", root_path %>
     <% if admin_signed_in? %>
