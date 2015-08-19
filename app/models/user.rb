@@ -46,14 +46,14 @@ class User < ActiveRecord::Base
   '''
   Takes the parameter of a DateTime instance (in this case
   the created_at attribute of any given User) and converts
-  to a more semantic description -- e.g. Member since August 2015
+  to a more semantic description -- e.g. Member since Aug 2015
   '''
   def self.get_semantic(datetime)
     datetime = datetime.to_s
 
-    months = ["January", "Febuary", "March", "April",
-      "May", "June", "July", "August", "September",
-      "October", "November", "December"]
+    months = ["Jan", "Feb", "Mar", "Apr",
+      "May", "Jun", "Jul", "Aug", "Sep",
+      "Oct", "Nov", "Dec"]
 
     index = parse_month(datetime)
     month = months[index]

@@ -13,9 +13,6 @@ class Post < ActiveRecord::Base
     end
   end
 
-  def self.create_description(post)
-    post.created_at.to_s + "\n" + post.user.user_name
-  end
 
   '''
   Topics are paginated -- this methods finds the page a post is on
