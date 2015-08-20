@@ -6,6 +6,8 @@ $(document).on('ready page:load', function(e) {
     })
   ;
 
+  $
+
   $("button[id='link']").click(function(e) {
     var current_msg = $('textarea').get(0).value;
 

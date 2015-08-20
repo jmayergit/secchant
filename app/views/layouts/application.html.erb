@@ -14,7 +14,7 @@
     <% if user_signed_in? %>
       <%= link_to "My Posts", user_index_path(current_user), id: "userNavLink" %>
     <% else %>
-      Sign in | Regist
+      Sign in | Register
     <% end %>
   </div>
 
@@ -45,16 +45,21 @@
   <div class="one wide left aligned column" id="ddmenu">
     <%= link_to "Home", root_path, :class => 'home' %>
   </div>
+
   <div class="one wide left aligned column" id="ddmenu">
     <div class="ui simple dropdown item">
       Forums
       <div class="menu">
-        <div class="item">Choice 1</div>
-        <div class="item">Choice 2</div>
-        <div class="item">Choice 3</div>
+        <% @secForums.each do |forum| %>
+          <div class="item"> <%= link_to forum.name, forum_show_path(forum), id: "MenuLink" %> </div>
+        <% end %>
+        <% @teamForums.each do |forum| %>
+          <div class="item"> <%= link_to forum.name, forum_show_path(forum), id: "MenuLink" %> </div>
+        <% end %>
       </div>
     </div>
   </div>
+
   <div class="one wide left aligned column" id="ddmenu">
     <div class="ui simple dropdown item">
       Football
@@ -67,6 +72,7 @@
       </div>
     </div>
   </div>
+
   <div class="one wide left aligned column" id="ddmenu">
     <div class="ui simple dropdown item">
       Basketball
@@ -79,6 +85,7 @@
       </div>
     </div>
   </div>
+
   <div class="one wide left aligned column" id="ddmenu">
     <div class="ui simple dropdown item">
       Baseball
@@ -91,6 +98,7 @@
       </div>
     </div>
   </div>
+
   <div class="eleven wide left aligned column" id="ddmenu">
     More
   </div>

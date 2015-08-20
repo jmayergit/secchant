@@ -116,4 +116,16 @@ label[for=topic_subject] {
 
 #verticalAlign {
   vertical-align: top;
+  position: relative;
+}
+
+.backToTop {
+  font-size: 11px;
+  position: absolute;
+  color: black;
+  bottom: 10px;
+}
+
+.backToTop:hover {
+  color: blue;
 }

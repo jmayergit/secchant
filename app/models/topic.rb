@@ -42,7 +42,24 @@ class Topic < ActiveRecord::Base
   '''
   Converts UTC to central time
   '''
-  def self.to_central
+  def self.to_central(militaryTime)
+    hour = militaryTime[0..1]
+    puts 'hour: ' + hour
+    hours = ['00','01','02','03','04','05','06','07','08','09','10','11','12',
+      '13','14','15','16','17','18','19','20','21','22','23']
+
+    i = 0
+    while i < hours.length
+      puts "i: " + i.to_s
+      break if hours[i] == hour
+      i += 1
+    end
+
+    i -= 7
+
+    central_hour = hours[i]
+
+    central_time = central_hour + militaryTime[-3..-1]
   end
 
 
@@ -55,7 +72,9 @@ class Topic < ActiveRecord::Base
     regex = /[[:digit:]]{2}:{1}[[:digit:]]{2}/
     militaryTime = regex.match(lpca).to_s
 
-    semantic_lpca = to_ampm(militaryTime)
+    centralTime = to_central(militaryTime)
+
+    semantic_lpca = to_ampm(centralTime)
   end
 
 
