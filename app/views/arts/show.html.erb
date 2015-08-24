@@ -2,8 +2,24 @@
   <div class="four wide column" id="ContentL">
     <%= render "devise/shared/forums" %>
   </div>
+
   <div class="eleven wide column" id="ContentR">
-    <%= @art.title %>
-    <%= @art.text %>
+
+    <h2> <%= @art.title %> <span id="artAuthor">Author: gussler </span> </h2>
+    <div class="ui divider"></div>
+
+    <span id="text"> <%= @art.text %> </span>
+    <div class="ui divider"></div>
+
+    <h3>Comments</h3>
+
+    <% @art.comments.each do |comment| %>
+      <div class="comment"> <%= comment.text %> </div>
+    <% end %>
+
+    <% if user_signed_in? %>
+        <h3>Post A Comment</h3>
+      <%= render "/comments/form" %>
+    <% end %>
   </div>
 <div>

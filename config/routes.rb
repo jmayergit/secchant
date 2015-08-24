@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: 'admins/sessions'}
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
 
-  resources :arts, shallow: true do
-    resources :comments
-  end
+  resources :arts
+
+  resources :comments
 
   get '/users/index/:id' => 'information#index' , as: 'user_index'
 

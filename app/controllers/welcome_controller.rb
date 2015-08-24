@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def home
-    @art = Art.all
+    @arts = Art.all
   end
 end
