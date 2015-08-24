@@ -37,7 +37,7 @@
                   <%= User.get_semantic(post.user.created_at) %><br />
                   <%= post.user.posts.count %> posts
                 </div>
-                <div class="backToTop">Back To Top</div>
+                <%= link_to "Back To Top", topic_show_path(post.topic), class: "backToTop" %>
               </td>
               <td id="message">
                 <span id="subject"> <%= post.topic.subject %> </span> <span id="date"> (Posted on <%= post.created_at %>) </span>

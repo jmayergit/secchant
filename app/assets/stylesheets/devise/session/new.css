@@ -6,3 +6,11 @@ form {
   font-size: 20px;
   padding-left: 34px;
 }
+
+#rememberMe {
+  padding-top: 10px;
+}
+
+#logIn {
+  padding-top: 10px;
+}

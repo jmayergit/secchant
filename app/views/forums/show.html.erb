@@ -64,7 +64,7 @@
             </td>
 
             <td id="tdata" class="lastPost">
-              <%= link_to Topic.semanticize_lpca(topic), topic_show_path(topic, :page => Post.find_page(topic.posts.last), anchor: "post-#{topic.posts.last.id}"), :class => "findPage" %>
+              <%= link_to Topic.print_lpca(topic), topic_show_path(topic, :page => Post.find_page(topic.posts.last), anchor: "post-#{topic.posts.last.id}"), :class => "findPage" %>
             </td>
           </tr>
           <% end %>

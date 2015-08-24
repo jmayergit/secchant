@@ -64,10 +64,10 @@ class Topic < ActiveRecord::Base
 
 
   '''
-  Takes a Topic instance and returns a semantic version
-  of its attribute last_post_created_at -- e.g.
+  Prints the last_post_created_at attribute
+  for a given topic -- e.g. 3:45 PM
   '''
-  def self.semanticize_lpca(topic)
+  def self.print_lpca(topic)
     lpca = topic.last_post_created_at.to_s
     regex = /[[:digit:]]{2}:{1}[[:digit:]]{2}/
     militaryTime = regex.match(lpca).to_s

@@ -4,4 +4,6 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:email]
+
+  has_many :art
 end
