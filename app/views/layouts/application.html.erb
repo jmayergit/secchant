@@ -12,7 +12,7 @@
 
   <div class="sixteen wide column" id="userNav">
     <% if user_signed_in? %>
-      <%= link_to "My Posts", user_index_path(current_user), id: "userNavLink" %>
+      <%= link_to "My Posts", post_search_path(user: current_user), id: "userNavLink" %>
     <% else %>
       Sign in | Register
     <% end %>

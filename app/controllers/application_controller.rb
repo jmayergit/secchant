@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :get_forums, only: [:new, :show, :edit, :home, :index]
+  before_action :get_forums, only: [:new, :show, :edit, :home, :topic, :post]
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

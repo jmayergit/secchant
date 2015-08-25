@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :comments
 
-  get '/users/index/:id' => 'information#index' , as: 'user_index'
+  get '/chant/topicsearch' => 'search#topic', as: 'topic_search'
+
+  get '/chant/postsearch' => 'search#post', as: 'post_search'
 
   get '/forums/:id' => 'forums#show', as: 'forum_show'
 

@@ -82,4 +82,9 @@ $(document).on('ready page:load', function(e) {
       console.log("Value: " + object[property]);
     }
   }
+
+
+  $('.editComment').click(function(e) {
+    console.log("Edit Comment Btn Clicked");
+  })
 });

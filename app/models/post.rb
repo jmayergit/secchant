@@ -31,4 +31,18 @@ class Post < ActiveRecord::Base
     page = (i / self.per_page) + 1
     return page
   end
+
+
+  '''
+  Prints the forum name of a post
+  '''
+  def get_forum_name
+    forum = self.topic.forum
+    name = forum.name
+    if forum.team_forum
+      name += " Sports Board"
+    end
+
+    return name
+  end
 end

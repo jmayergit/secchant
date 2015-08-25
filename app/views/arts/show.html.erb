@@ -14,7 +14,14 @@
     <h3>Comments</h3>
 
     <% @art.comments.each do |comment| %>
-      <div class="comment"> <%= comment.text %> </div>
+      <div class="comment" id="<%= "comment-#{comment.id}" %>">
+        <%= comment.text %>
+        <% if user_signed_in? %>
+          <% if comment.belongs_to(current_user) %>
+            <button class="editComment" type="button" name="button">Edit</button>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
 
     <% if user_signed_in? %>
