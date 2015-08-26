@@ -12,34 +12,41 @@
 
   <div class="sixteen wide column" id="userNav">
     <% if user_signed_in? %>
-      <%= link_to "My Posts", post_search_path(user: current_user), id: "userNavLink" %>
+
+      <span id="siteNav"> My Links: </span>
+      <%= link_to "Posts", post_search_path(user: current_user), id: "userNavLink" %>
+      <%= link_to "Topics", topic_search_path(user: current_user), id: "userNavLink" %>
+
     <% else %>
       Sign in | Register
     <% end %>
   </div>
 
-  <div class="eight wide column" id="TopNavL">
-    <%= link_to "SECCHANT.COM", root_path %>
-    <% if admin_signed_in? %>
-      <% if current_admin.god_mode? %>
-        <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
-      <% end %>
-    <% end %>
-  </div>
+  <div class="sixteen wide column" id="TopNav">
 
-  <div class="eight wide right aligned column" id="TopNavR">
-    <div id="session">
-    <% if admin_signed_in? %>
-      <%= link_to "Sign out", destroy_admin_session_path, method: :delete, :class => 'session' %>
-    <% else %>
-      <% if user_signed_in? %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'session' %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path, :class => 'session' %> |
-        <%= link_to "Register", new_user_registration_path, :class => 'registration' %>
+    <%= image_tag "SecRantLogo-v1.gif", id: "TopNavImg" %>
+
+    <div id="TopNavM">
+      <% if admin_signed_in? %>
+        <% if current_admin.god_mode? %>
+          <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
+        <% end %>
       <% end %>
-    <% end %>
     </div>
+
+    <div id="TopNavR">
+      <% if admin_signed_in? %>
+        <%= link_to "Sign out", destroy_admin_session_path, method: :delete, :class => 'session' %>
+      <% else %>
+        <% if user_signed_in? %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'session' %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, :class => 'session' %> |
+          <%= link_to "Register", new_user_registration_path, :class => 'registration' %>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 
   <div class="one wide left aligned column" id="ddmenu">

@@ -42,6 +42,7 @@ a {
 }
 
 #userNavLink {
+  padding: 0px 0px 0px 20px;
   color: gray;
 }
 
@@ -53,19 +54,30 @@ a {
   color: white;
 }
 
-#TopNavL {
+#TopNav {
+  padding: 0px 0px 0px 0px;
   font-size: 20px;
   background-color: #10254A;
+  position: relative;
+  height: 55px;
+}
+
+#TopNavImg {
+  position: absolute;
+  display: inline;
+  left: 30px;
+}
+
+#TopNavM {
+  display: inline;
 }
 
 #TopNavR {
-  font-size: 20px;
-  background-color: #10254A;
+  position: absolute;
+  display: inline;
+  right: 40px;
+  top: 22%;
 }
-
-/*#home {
-  padding-left: 20px;
-}*/
 
 .session {
   color: white;
@@ -143,4 +155,37 @@ a {
   height: 45px;
   width: 55px;
   border-radius: 5px;
+}
+
+#siteNav {
+  color: #999999;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#bbcode {
+  left: 500px;
+  position: absolute;
+}
+
+#link_markup {
+  color: blue;
+}
+
+#img_markup {
+}
+
+#quote_markup {
+}
+
+#italicize_markup {
+  font-style: italic;
+}
+
+#bold_markup {
+  font-weight: 900;
+}
+
+#underline_markup {
+  text-decoration: underline;
 }

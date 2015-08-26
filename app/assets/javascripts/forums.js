@@ -8,7 +8,7 @@ $(document).on('ready page:load', function(e) {
 
   $
 
-  $("button[id='link']").click(function(e) {
+  $("button[id='link_markup']").click(function(e) {
     var current_msg = $('textarea').get(0).value;
 
     var link = prompt("Enter a valid URL: (must include http://):");
@@ -26,13 +26,13 @@ $(document).on('ready page:load', function(e) {
     }
   })
 
-  $("button[id='img']").click(function(e) {
+  $("button[id='img_markup']").click(function(e) {
     var current_msg = $('textarea').get(0).value;
 
     var img = prompt("Enter a valid image URL: (must include http://):");
   })
 
-  $("button[id='bold']").click(function(e) {
+  $("button[id='bold_markup']").click(function(e) {
     var current_msg = $('textarea').get(0).value;
 
     var bold = prompt("Enter the text you wish to bold:");
@@ -44,7 +44,7 @@ $(document).on('ready page:load', function(e) {
     }
   })
 
-  $("button[id='italicize']").click(function(e) {
+  $("button[id='italicize_markup']").click(function(e) {
     var current_msg = $('textarea').get(0).value;
 
     var italicize = prompt("Enter the text you wish to italicize:");
@@ -56,7 +56,7 @@ $(document).on('ready page:load', function(e) {
     }
   })
 
-  $("button[id='underline']").click(function(e) {
+  $("button[id='underline_markup']").click(function(e) {
     var current_msg = $('textarea').get(0).value;
 
     var underline = prompt("Enter the text you wish to underline:");
@@ -68,7 +68,7 @@ $(document).on('ready page:load', function(e) {
     }
   })
 
-  $("button[id='quote']").click(function(e) {
+  $("button[id='quote_markup']").click(function(e) {
     var current_msg = $('textarea').get(0).value;
 
     var quote = prompt("Enter the text you wish to quote:");
