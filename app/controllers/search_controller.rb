@@ -16,9 +16,11 @@ class SearchController < ApplicationController
     @topic = @post.topic
 
     @replies = []
-    replies = @post.replies.split(",")
-    replies.each do |reply|
-      @replies.insert(-1,Post.find(reply))
+    if @post.replies != nil
+      replies = @post.replies.split(",")
+      replies.each do |reply|
+        @replies.insert(-1,Post.find(reply))
+      end
     end
   end
 end

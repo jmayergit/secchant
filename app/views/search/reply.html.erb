@@ -6,7 +6,7 @@
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
       <div class="PgBoardName">
-        SEC Tickets - Replies to Post
+        <%= @post.get_forum_name %> - Replies to Post
       </div>
 
       <div class="pagination">
@@ -29,7 +29,7 @@
 
         <tbody>
 
-          <tr id="<%= "post-#{@post.id}" %>">
+          <tr class="repliedTo" id="<%= "post-#{@post.id}" %>">
 
 
 

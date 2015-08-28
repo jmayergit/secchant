@@ -26,3 +26,6 @@ while i < len
   Forum.create(name: teams[i][0], image: teams[i][1], team_forum: true)
   i += 1
 end
+
+
+Admin.create(email:"jalexismayer@gmail.com", password:"password", god_mode: true)
