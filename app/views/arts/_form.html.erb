@@ -1,0 +1,12 @@
+<%= form_for @art do |art_form| %>
+  <%= art_form.label :title %>
+  <%= art_form.text_field :title %>
+
+  <%= art_form.label :text %>
+  <%= art_form.text_area :text %>
+
+  <%= art_form.label :image %>
+  <%= art_form.file_field(:image)  %>
+
+  <%= art_form.submit %>
+<% end %>

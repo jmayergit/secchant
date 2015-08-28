@@ -6,6 +6,7 @@
 }
 
 #tdataLeft {
+  vertical-align: top;
   color: #000066;
   font-size: 15px;
 }
@@ -24,6 +25,7 @@
 }
 
 .postMessage {
+  min-height: 102px;
   float: left;
   padding: 0px 5px 0px 5px;
 }

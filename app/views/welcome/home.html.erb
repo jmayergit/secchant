@@ -5,6 +5,10 @@
   </div>
   <div class="eleven wide column" id="ContentR">
       <h2 class="Art_SEC">Latest SEC News</h2>
+      <% if admin_signed_in? %>
+      <%= link_to "New Art", new_art_path, class: "custButton", id: "newArtButton" %>
+        <!-- <button type="button" name="create_art" class="custButton" id="newArtButton">New Art</button> -->
+      <% end %>
     <div class="">
       <ul>
         <% @arts.each do |art| %>
