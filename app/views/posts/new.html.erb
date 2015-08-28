@@ -5,9 +5,8 @@
   </div>
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
-      <div id="bbcode">
-        <%= render "/posts/bbcode" %>
-      </div>
+      <%= render "/posts/bbcode" %>
+      
       <%= form_for @post do |f| %>
         <%= hidden_field(:reply_post, :id) %>
         <span id="labelMessage"> <%= f.label :message %> </span> <br />

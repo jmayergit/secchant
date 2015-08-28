@@ -9,6 +9,10 @@
         Posts By <%= @user.user_name %>
       </div>
 
+      <div class="pagination">
+        <%= will_paginate @posts %>
+      </div>
+
       <table class="ui celled striped table">
         <thead>
           <tr>

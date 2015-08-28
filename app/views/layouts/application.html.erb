@@ -18,7 +18,7 @@
       <%= link_to "Topics", topic_search_path(user: current_user), id: "userNavLink" %>
 
     <% else %>
-      Sign in | Register
+      <%= link_to "Sign in", new_user_session_path, class: "blackSession" %> | <%= link_to "Register", new_user_registration_path, class: "blackSession" %>
     <% end %>
   </div>
 

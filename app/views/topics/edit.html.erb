@@ -6,9 +6,8 @@
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
       <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %>
-      <div id="bbcodeTopic">
-        <%= render "/posts/bbcode" %>
-      </div>
+      <%= render "/posts/bbcode" %>
+      
       <%= form_for @topic do |topic_form| %>
         <%= topic_form.label :subject %><br />
         <%= topic_form.text_field :subject %><br />

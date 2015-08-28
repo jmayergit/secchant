@@ -1,0 +1,44 @@
+<div class="sixteen wide column" id="sixteenWideColumn"></div>
+<div class="two column row" id="twoColumnRow">
+  <div class="two wide column" id="twoWideColumn">
+    <%= render "devise/shared/leftNav" %>
+  </div>
+
+  <div class="fourteen wide column" id="fourteenWideColumn">
+    <div id="bodyR">
+      <div class="PgBoardName">
+        Topics By <%= @user.user_name %>
+      </div>
+
+      <div class="pagination">
+        <%= will_paginate @topics %>
+      </div>
+
+      <table class="ui celled striped table">
+        <thead>
+          <tr>
+            <th id="thead">
+              Forum
+            </th>
+            <th id="theadSearch">
+              Subject
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @topics.each do |topic| %>
+          <tr>
+            <td id="tdataLeft">
+              <%= image_tag "SR_Icon1.jpg" %> <%= link_to topic.forum.name, forum_show_path(topic.forum), class: "searchLink" %>
+            </td>
+            <td id="tdataRight">
+
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
