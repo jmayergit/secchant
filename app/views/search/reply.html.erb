@@ -1,0 +1,133 @@
+<div class="sixteen wide column" id="sixteenWideColumn"></div>
+<div class="two column row" id="twoColumnRow">
+  <div class="two wide column" id="twoWideColumn">
+    <%= render "devise/shared/leftNav" %>
+  </div>
+  <div class="fourteen wide column" id="fourteenWideColumn">
+    <div id="bodyR">
+      <div class="PgBoardName">
+        SEC Tickets - Replies to Post
+      </div>
+
+      <div class="pagination">
+      </div>
+
+      <%= link_to "Jump To Topic", topic_show_path(@topic) %>
+
+      <table class="ui celled striped table">
+
+        <thead>
+          <tr>
+            <th id="thead">
+              Posted By
+            </th>
+            <th id="theadSearch">
+              Message
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr id="<%= "post-#{@post.id}" %>">
+
+
+
+            <td id="verticalAlign">
+              <span class="postUserName"> <%= @post.user.user_name %> </span> <br />
+              <div class="userInfo">
+
+
+                <%= User.get_semantic(@post.user.created_at) %><br />
+                <%= @post.user.posts.count %> posts
+              </div>
+              <%= link_to "Back To Top", topic_show_path(@post.topic), class: "backToTop" %>
+            </td>
+
+            <td id="message">
+              <span id="subject"> <%= @post.topic.subject %> </span> <span id="date"> (Posted on <%= @post.created_at %>) </span>
+
+              <div class="ui divider"></div>
+
+              <div class="pText">
+                <%== @post.message.bbcode_to_html %>
+              </div>
+
+              <div class="ui divider"></div>
+
+                <% if user_signed_in? %>
+                  <% if current_user.id == @post.user_id %>
+
+                    <% if Topic.op?(@topic, @post) %>
+                      <%= link_to "Edit", topic_path(@post.topic.id), :class => 'custButton' %>
+                    <% else %>
+                      <%= link_to "Edit", posts_edit_path(@post), :class => 'custButton' %>
+                    <% end %>
+
+                  <% end %>
+
+                  <%= link_to "Reply", posts_new_path(:topic_id=>@topic.id, :reply_id=>@post.id), :class => 'custButton' %>
+
+                  request admin
+
+                  <%= link_to @post.print_replies, reply_search_path(post: @post), class: "rep" %>
+
+                <% end %>
+
+            </td>
+          </tr>
+
+
+
+          <% @replies.each do |reply| %>
+          <tr id="<%= "post-#{reply.id}" %>">
+
+            <td id="verticalAlign">
+              <span class="postUserName"> <%= reply.user.user_name %> </span> <br />
+
+              <div class="userInfo">
+                <%= User.get_semantic(reply.user.created_at) %> <br />
+                <%= reply.user.posts.count %> posts
+              </div>
+
+              <%= link_to "Back To Top", reply_search_path(@post), class: "backToTop" %>
+
+            </td>
+
+            <td id="message">
+              <span id="subject"> <%= reply.topic.subject %> </span> <span id="date"> (Posted on <%= reply.created_at %>) </span>
+
+              <div class="ui divider"></div>
+
+              <div class="pText">
+                <%== reply.message.bbcode_to_html %>
+              </div>
+
+              <div class="ui divider"></div>
+
+              <% if user_signed_in? %>
+                <% if current_user.id == reply.user.id %>
+
+                <% if Topic.op?(@topic, reply) %>
+                  <%= link_to "Edit", topic_path(@topic), :class => "custButton" %>
+                <% else %>
+                  <%= link_to "Edit", posts_edit_path(reply), :class => "custButton" %>
+                <% end %>
+
+                <%= link_to "Reply", posts_new_path(:topic_id => @topic.id, :reply_id => reply.id), :class => "custButton" %>
+
+                <%= link_to reply.print_replies, reply_search_path(post: reply), class: "rep" %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+
+</div>

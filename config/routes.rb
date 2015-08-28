@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/chant/postsearch' => 'search#post', as: 'post_search'
 
+  get '/chant/replysearch' => 'search#reply', as: 'reply_search'
+
   get '/forums/:id' => 'forums#show', as: 'forum_show'
 
   get '/topics/new' => 'topics#new', as: 'topic_new'

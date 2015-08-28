@@ -4,6 +4,31 @@ class Post < ActiveRecord::Base
 
   self.per_page = 20
 
+
+  '''
+  Counts the number of replies a post has
+  '''
+  def count_replies
+    if self.replies == nil
+      count = 0
+    else
+      count = self.replies.split(",").length
+    end
+  end
+
+
+  '''
+  Prints the replies, e.g. Replies (2)
+  '''
+  def print_replies
+    count = self.count_replies
+
+    "Replies (" + count.to_s + ")"
+  end
+
+
+  '''
+  '''
   def self.new_replies(post, reply_id)
     replies = post.replies
     if replies == nil
