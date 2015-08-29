@@ -1,5 +1,5 @@
-== README
-Testing
+# SECCHANT
+### (Southeastern Conference Chant e.g. "SEC! SEC! SEC!")
 
   Rails 4.1.8 Application
 
