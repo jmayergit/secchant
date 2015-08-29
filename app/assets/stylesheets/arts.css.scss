@@ -18,14 +18,41 @@
   float: right;
 }
 
-.progress {
-  max-width: 600px;
-  margin:    0.2em 0 0.2em 0;
+.Art {
+  border-bottom: 1px solid #ededed;
+  font-size: 13px;
+  position: relative;
+  padding: 12px 0px;
 }
 
-.progress .bar {
-  height:  1.2em;
-  padding: 0.2em;
-  color:   white;
-  display: none;
+.Art_Image {
+  display: table-cell;
+}
+
+.Art_Title1 {
+  font-size: 20px;
+  line-height: 25px;
+  font-family: calibri;
+  color: #333333;
+}
+
+.Art_Title1:hover {
+  text-decoration: underline;
+  color: #333333;
+}
+
+#tableCell {
+  display: table-cell;
+}
+
+.Art_Text1 {
+  position: absolute;
+  top: 5px;
+  left: 27%;
+}
+
+.Art_Text2 {
+  padding-top: 8px;
+  line-height: 18px;
+  font-size: 13px;
 }

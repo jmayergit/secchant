@@ -1,19 +1,39 @@
 <!-- Home PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome PageHome -->
 <div class="two column row">
+
   <div class="four wide column" id="ContentL">
     <%= render "devise/shared/forums" %>
   </div>
+
   <div class="eleven wide column" id="ContentR">
       <h2 class="Art_SEC">Latest SEC News</h2>
       <% if admin_signed_in? %>
       <%= link_to "New Art", new_art_path, class: "custButton", id: "newArtButton" %>
         <!-- <button type="button" name="create_art" class="custButton" id="newArtButton">New Art</button> -->
       <% end %>
-    <div class="">
-      <ul>
-        <% @arts.each do |art| %>
-          <li> <%= link_to "title: #{art.title} text: #{art.text}", art_path(art) %> </li>
+
+      <% @arts.each do |art| %>
+
+        <div class="Art">
+
+          <div class="Art_Image">
+            <%= image_tag art.image.url %>
+          </div>
+
+          <div class="Art_Text1">
+
+            <h2 id="tableCell">
+              <%= link_to art.title, art_path(art), class: "Art_Title1" %>
+            </h2>
+
+            <div class="Art_Text2">
+              <%= art.text %>
+            </div>
+
+          </div>
+
+        </div>
+
         <% end %>
-      </ul>
-    </div
+  </div>
 </div>
