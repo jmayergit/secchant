@@ -5,7 +5,10 @@ class Art < ActiveRecord::Base
   has_attached_file :image,
                     storage: :s3,
                     s3_credentials: 'aws.yaml',
-                    bucket: "secchant.aws.bucket"
+                    bucket: "secchant.aws.bucket",
+                    url: 'secchant.aws.bucket.s3.amazonaws.com',
+                    path: "uploads/#{SecureRandom.uuid}/${filename}",
+                    s3_host_name: 's3-us-west-1.amazonaws.com'
 
   validates_attachment :image,
                         content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
