@@ -12,7 +12,6 @@ class ArtsController < ApplicationController
 
   def create
     @art = Art.new(art_params)
-    @art.image = params[:art][:image].read
     if @art.save
       redirect_to art_path(@art)
     else
@@ -24,7 +23,7 @@ class ArtsController < ApplicationController
   private
 
   def art_params
-    params.require(:art).permit(:title, :subject)
+    params.require(:art).permit(:title, :text, :image)
   end
 
 end

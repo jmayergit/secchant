@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
+gem 'aws-sdk'
+
+gem 'paperclip'
+
+gem 'rmagick', '2.13.2'
+
 group :test do
   gem 'factory_girl_rails'
 end

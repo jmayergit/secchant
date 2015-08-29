@@ -19,15 +19,17 @@ class Topic < ActiveRecord::Base
     minutes = militaryTime[-2..-1]
     hours = militaryTime[0..1].to_i
 
-    if hours >= 13
+    if hours >= 12
       pm = true
 
       hours = hours - 12
-    elsif hours <= 12
+    elsif hours < 12
       am = true
     else
       "What!"
     end
+
+    hours = 12 if hours == 0 || hours == 00
 
     ampm_time = hours.to_s + ":" + minutes
 
@@ -44,7 +46,6 @@ class Topic < ActiveRecord::Base
   '''
   def self.to_central(militaryTime)
     hour = militaryTime[0..1]
-    puts 'hour: ' + hour
     hours = ['00','01','02','03','04','05','06','07','08','09','10','11','12',
       '13','14','15','16','17','18','19','20','21','22','23']
 
