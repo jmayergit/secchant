@@ -2,20 +2,39 @@
 
 ### (Southeastern Conference Chant e.g. "SEC! SEC! SEC!")
 
-  Rails 4.1.8 Application
+### Purpose
 
-  pg database
+SECCHANT is a forum for discussion of SEC Football. It is a gathering
+place for fans to debate, troll and flame each other with a wide
+variety of topics related to member Universities.
 
-  tested with Rspec, Capybara, and FactoryGirl
 
-  hosted by Heroku
+### Rails v 4.1.8
 
-  ruby-bbcode
+### Notable Gems used
 
-  Clone of http://www.secrant.com/
+* paperclip
 
-  Forum for Southeastern Conference Discussion
+* ruby-bbcode
 
-  Gathering place for fans to debate the latest in news, games, and recruiting
+* pg
 
-  To run tests from command line run 'rspec'
+### Hosted by Heroku
+
+* secchant.herokuapp.com
+
+### clone of http://www.secrant.com/
+
+* a favorite website of mine
+
+* great source of information
+
+### Testing
+
+* Rspec
+
+* Capybara
+
+* FactoryGirl
+
+* To run tests from command line run 'rspec'
