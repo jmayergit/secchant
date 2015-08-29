@@ -19,9 +19,15 @@ variety of topics related to member Universities.
 
 * pg
 
+* devise
+
+* semantic-ui-sass
+
+* will_paginate
+
 ### Hosted by Heroku
 
-* secchant.herokuapp.com
+* http://secchant.herokuapp.com
 
 ### clone of http://www.secrant.com/
 

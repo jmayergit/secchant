@@ -17,3 +17,5 @@
 
 # Ignore .env file which contains sensitive AWS keys
 /.env
+
+/aws.yaml
