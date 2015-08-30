@@ -19,14 +19,47 @@
  @import "semantic-ui/modules/sticky";
 
 .ui.grid {
-  margin-top: 0rem;
-  margin-left: 0rem;
-  margin-right: 0rem;
-  padding-left: 0rem;
-  padding-right: 0rem;
+  // margin-top: 0rem;
+  // margin-left: 0rem;
+  // margin-right: 0rem;
+  // padding-left: 0rem;
+  // padding-right: 0rem;
+}
+
+#fiveWide {
+  background-color: #10254A;
+  display: table-cell;
+}
+
+#tRant_Blue {
+  padding: 0px 0px 0px 0px;
+  background-color: #10254A;
+}
+
+#tRant_Img {
+  padding-left: 5%;
+}
+
+#mainNav {
+  background-color: #00133F;
+  padding: 8px 0px 0px 5px;
+}
+
+.ui.simple.dropdown.item {
+  padding-left: 2%;
+  font-size: 15px;
+  color: white;
+}
+
+.inline {
+  padding-left: 2%;
+  font-size: 15px;
+  color: white;
+  display: inline;
 }
 
 a[href="/"] {
+  font-size: 15px;
   padding-left: 20px;
   color: white;
 }
@@ -36,9 +69,8 @@ a {
 }
 
 #userNav {
-  padding: 7px 0px 7px 32px;
-  background-color: #111;
-  color: gray;
+  padding: 20px 0px 9px 30px;
+  background-color: #252525;
 }
 
 #userNavLink {
@@ -62,27 +94,17 @@ a {
   height: 55px;
 }
 
-#TopNavImg {
-  position: absolute;
-  display: inline;
-  left: 30px;
-}
-
-#TopNavM {
-  top: 30%;
-  left: 50%;
-  position: absolute;
-  display: inline;
-}
-
-#TopNavR {
-  position: absolute;
-  display: inline;
-  right: 40px;
-  top: 22%;
+.signInMenu {
+  background-color: #00133F;
+  padding: 8px 14px 8px 14px;
+  color: white;
+  display: table-cell;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .session {
+  font-size: 14px;
+  font-weight: bold;
   color: white;
 }
 
@@ -91,7 +113,8 @@ a {
 }
 
 .registration {
-  padding-right: 20px;
+  font-size: 14px;
+  font-weight: bold;
   color: white;
 }
 
@@ -194,9 +217,30 @@ a {
 }
 
 .blackSession {
-  color: gray;
+  color: #c2c2c2;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: arial;
+}
+
+.blackSession2 {
+  color: #c2c2c2;
+  font-weight: bold;
+  font-size: 13px;
+  padding-left: 17px;
+  font-family: arial;
 }
 
 .blackSession:hover {
-  color: gray;
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.blackSession2:hover {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 13px;
 }

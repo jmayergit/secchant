@@ -18,42 +18,46 @@
       <%= link_to "Topics", topic_search_path(user: current_user), id: "userNavLink" %>
 
     <% else %>
-      <%= link_to "Sign in", new_user_session_path, class: "blackSession" %> | <%= link_to "Register", new_user_registration_path, class: "blackSession" %>
+      <%= link_to "Sign in", new_user_session_path, class: "blackSession" %> <%= link_to "Register", new_user_registration_path, class: "blackSession2" %>
     <% end %>
   </div>
 
-  <div class="sixteen wide column" id="TopNav">
-
-    <%= image_tag "SecRantLogo-v1.gif", id: "TopNavImg" %>
-
-    <div id="TopNavM">
-      <% if admin_signed_in? %>
-        <% if current_admin.god_mode? %>
-          <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
+  <div class="three column row" id="tRant_Blue">
+    <div class="three wide column" id="fiveWide">
+      <%= image_tag "SecRantLogo-v1.gif", id: "tRant_Img" %>
+    </div>
+    
+    <div class="three wide column" id="fiveWide">
+        <% if admin_signed_in? %>
+          <% if current_admin.god_mode? %>
+            <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
+          <% end %>
         <% end %>
-      <% end %>
     </div>
 
-    <div id="TopNavR">
-      <% if admin_signed_in? %>
-        <%= link_to "Sign out", destroy_admin_session_path, method: :delete, :class => 'session' %>
-      <% else %>
-        <% if user_signed_in? %>
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'session' %>
+    <div class="three wide column" id="fiveWide">
+      <div class="signInMenu">
+        <% if admin_signed_in? %>
+          <%= link_to "Sign out", destroy_admin_session_path, method: :delete, :class => 'session' %>
         <% else %>
-          <%= link_to "Sign in", new_user_session_path, :class => 'session' %> |
-          <%= link_to "Register", new_user_registration_path, :class => 'registration' %>
+          <% if user_signed_in? %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'session' %>
+          <% else %>
+            <%= link_to "Sign in", new_user_session_path, :class => 'session' %> |
+            <%= link_to "Register", new_user_registration_path, :class => 'registration' %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="sixteen wide column" id="mainNav">
+
+    <div class="inline">
+      <%= link_to "Home", root_path, :class => 'home' %>
     </div>
 
-  </div>
-
-  <div class="one wide left aligned column" id="ddmenu">
-    <%= link_to "Home", root_path, :class => 'home' %>
-  </div>
-
-  <div class="one wide left aligned column" id="ddmenu">
     <div class="ui simple dropdown item">
       Forums
       <div class="menu">
@@ -65,9 +69,7 @@
         <% end %>
       </div>
     </div>
-  </div>
 
-  <div class="one wide left aligned column" id="ddmenu">
     <div class="ui simple dropdown item">
       Football
       <div class="menu">
@@ -78,9 +80,7 @@
         <div class="item"><a href="http://stats.ncaa.org/rankings?sport_code=MFB&division=11" id="MenuLink">Stats</a></div>
       </div>
     </div>
-  </div>
 
-  <div class="one wide left aligned column" id="ddmenu">
     <div class="ui simple dropdown item">
       Basketball
       <div class="menu">
@@ -91,9 +91,7 @@
         <div class="item"><a href="http://espn.go.com/mens-college-basketball/statistics/_/group/23" id="MenuLink">Stats</a></div>
       </div>
     </div>
-  </div>
 
-  <div class="one wide left aligned column" id="ddmenu">
     <div class="ui simple dropdown item">
       Baseball
       <div class="menu">
@@ -104,11 +102,13 @@
         <div class="item"><a href="http://www.ncaa.com/stats/baseball/d1" id="MenuLink">Stats</a></div>
       </div>
     </div>
+
+    <div class="inline">
+      More
+    </div>
+
   </div>
 
-  <div class="eleven wide left aligned column" id="ddmenu">
-    More
-  </div>
 
   <% if flash.keys %>
       <% flash.keys.each do |key| %>
