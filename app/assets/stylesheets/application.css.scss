@@ -37,7 +37,7 @@
 }
 
 #tRant_Img {
-  padding-left: 5%;
+  padding-left: 2%;
 }
 
 #mainNav {
@@ -60,7 +60,6 @@
 
 a[href="/"] {
   font-size: 15px;
-  padding-left: 20px;
   color: white;
 }
 
@@ -75,11 +74,12 @@ a {
 
 #userNavLink {
   padding: 0px 0px 0px 20px;
-  color: gray;
+  color: #c2c2c2;
 }
 
 #userNavLink:hover {
-  color: gray;
+  color: #fff;
+  text-decoration: underline;
 }
 
 #session {
@@ -166,14 +166,16 @@ a {
 }
 
 .panelLink {
+  float: right;
+  width: 60%;
   font-size: 15px;
   font-style: oblique;
-  float: right;
   text-shadow: 0px 0px 10px;
   color: #ffcc33;
 }
 
 .panelLink:hover {
+  text-decoration: underline;
   color: #ffff00;
 }
 
@@ -184,7 +186,7 @@ a {
 }
 
 #siteNav {
-  color: #999999;
+  color: #E7E9EF;
   font-size: 13px;
   font-weight: bold;
 }

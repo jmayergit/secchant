@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :comments
 
+  get '/users/:id/prof' => 'profiles#show', as: 'profile'
+
   get '/chant/topicsearch' => 'search#topic', as: 'topic_search'
 
   get '/chant/postsearch' => 'search#post', as: 'post_search'
