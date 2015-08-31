@@ -6,6 +6,7 @@ class Topic < ActiveRecord::Base
   before_create :set_last_post_created_at_to_now
 
   validates :subject, presence: true
+  validates :forum, presence: true
 
   self.per_page = 20
 

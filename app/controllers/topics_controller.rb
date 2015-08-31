@@ -1,6 +1,5 @@
 class TopicsController < ApplicationController
   before_action :require_login, except: :show
-  before_action :require_forum_parameter, only: :new
   before_action :format_post_params, only: :create
 
   def new
@@ -85,15 +84,6 @@ class TopicsController < ApplicationController
         flash[:error] = "You must be logged on in order to post on this board."
 
         redirect_to new_user_session_path
-      end
-    end
-
-    def require_forum_parameter
-      if params[:forum]
-      else
-        flash[:error] = ";)"
-
-        redirect_to root_path
       end
     end
 

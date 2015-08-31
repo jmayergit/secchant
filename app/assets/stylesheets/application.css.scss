@@ -19,11 +19,11 @@
  @import "semantic-ui/modules/sticky";
 
 .ui.grid {
-  // margin-top: 0rem;
-  // margin-left: 0rem;
-  // margin-right: 0rem;
-  // padding-left: 0rem;
-  // padding-right: 0rem;
+  margin-top: 0rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
 #fiveWide {
@@ -37,7 +37,7 @@
 }
 
 #tRant_Img {
-  padding-left: 2%;
+
 }
 
 #mainNav {
@@ -52,7 +52,7 @@
 }
 
 .inline {
-  padding-left: 2%;
+  padding-left: 15px;
   font-size: 15px;
   color: white;
   display: inline;
@@ -68,7 +68,7 @@ a {
 }
 
 #userNav {
-  padding: 20px 0px 9px 30px;
+  padding: 7px 0px 7px 20px;
   background-color: #252525;
 }
 
