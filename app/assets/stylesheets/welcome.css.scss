@@ -4,31 +4,35 @@
 
 @import "semantic-ui";
 
-.image {
-
+#fourWideColumnHome {
+  padding: 0px 0px 0px 0px;
 }
 
-.forumTitle {
-
+#eightWideColumnHome {
+  padding: 0px 0px 0px 0px;
 }
 
-.forumDescription {
-  font-size: 12px;
+#twoColumnRowHome {
+  padding: 0px 0px 0px 0px;
 }
 
 #ForumsH {
   color: #a89eaf;
-  padding: 2px 2px 2px 2px;
+  padding: 2px 2px 15px 2px;
+  font-size: 15px;
+  line-height: 18px;
 }
 
-.Forums1{
-  display: inline-flex;
-  padding: 7px 2px 10px 2px;
+#ForumsH2{
+  color: #a89eaf;
+  padding: 20px 2px 15px 2px;
+  font-size: 15px;
+  line-height: 18px;
 }
 
-.rightSide {
-  max-width: 130px;
-  margin: -8px 0px 0px 10px;
+.forumDescription {
+  font-size: 12px;
+  padding-bottom: 25px;
 }
 
 .homeLNav {

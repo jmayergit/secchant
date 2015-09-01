@@ -3,51 +3,114 @@
     SEC Forums
   </div>
   <% if @secForums %>
-    <% for forum in @secForums %>
-      <% if forum.name != 'Help Board' %>
-        <div class="Forums1">
 
-          <div class="image">
-            <%= image_tag forum.image, class: "forumImage" %>
-          </div>
+    <div class="ui grid">
+      <% for forum in @secForums %>
 
-          <div class="rightSide">
-            <div class="forumTitle">
-               <%= link_to forum.name, forum_show_path(forum), :class => "homeLNav" %>
-            </div>
-            <div class="forumDescription">
-              <%= forum.description %>
-            </div>
-          </div>
-          
+
+
+
+      <div class="two column row" id="twoColumnRowHome">
+
+        <% if forum.name != 'Help Board' %>
+
+        <div class="four wide column" id="fourWideColumnHome">
+          <%= image_tag forum.image, class: "forumImage" %>
         </div>
+
+
+        <div class="eight wide column" id="eightWideColumnHome">
+
+          <div class="">
+            <%= link_to forum.name, forum_show_path(forum), :class => "homeLNav" %>
+          </div>
+
+
+          <div class="forumDescription">
+            <%= forum.description %>
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <% end %>
+
+      </div>
+
+
+
+
       <% end %>
-    <% end %>
+
+    </div>
+
+
+
   <% end %>
 </div>
 
 <div class="Forums">
-  <div id="ForumsH">
+  <div id="ForumsH2">
     Team Forums
   </div>
+
+
+
   <% if @teamForums %>
+
+  <div class="ui grid">
+
     <% for forum in @teamForums  %>
-      <div class="Forums1">
 
-        <div class="iamge">
+    <div class="two column row" id="twoColumnRowHome">
+
+      <div class="four wide column" id="fourWideColumnHome">
+
           <%= image_tag forum.image, class: "forumImage" %>
-        </div>
 
-        <div class="rightSide">
+      </div>
+
+
+
+      <div class="eight wide column" id="eightWideColumnHome">
+
+
           <div class="forumTitle">
             <%= link_to forum.name, forum_show_path(forum), :class => "homeLNav" %>
           </div>
+
           <div class="forumDescription">
             <%= forum.description %>
           </div>
-        </div>
+
+
 
       </div>
+
+
+    </div>
+
+
+
+
+
+
+
     <% end  %>
+
+  </div>
+
+
+
+
   <% end %>
+
+
 </div>
