@@ -29,7 +29,15 @@ $(document).on('ready page:load', function(e) {
   $("button[id='img_markup']").click(function(e) {
     var current_msg = $('textarea').get(0).value;
 
-    var img = prompt("Enter a valid image URL: (must include http://):");
+    var img_url = prompt("Enter a valid image URL: (must include http://):");
+
+    if( img_url != null) {
+      var img = "[img](url='" + img_url + "')[/img]";
+
+      var new_msg = current_msg + img;
+
+      $('textarea').get(0).value = new_msg;
+    }
   })
 
   $("button[id='bold_markup']").click(function(e) {
