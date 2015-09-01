@@ -29,30 +29,74 @@
   display: table-cell;
 }
 
-.Art_Title1 {
-  font-size: 20px;
-  line-height: 25px;
-  font-family: calibri;
-  color: #333333;
+.Art_Title {
+  font-size: 34px;
+  line-height: 40px;
 }
 
-.Art_Title1:hover {
-  text-decoration: underline;
-  color: #333333;
+#postedByArtColumn {
+  padding-bottom: 0px;
 }
 
-#tableCell {
-  display: table-cell;
+div#postedByArtColumn
+Hr {
+  margin-top: 4px;
 }
 
-.Art_Text1 {
-  position: absolute;
-  top: 5px;
-  left: 27%;
-}
 
-.Art_Text2 {
-  padding-top: 8px;
-  line-height: 18px;
+.postedByArt {
+  overflow: hidden;
+  color: #6E6E6E;
+  font-family: arial;
+  font-weight: normal;
   font-size: 13px;
+  text-decoration: none;
+  FONT-WEIGHT: normal;
+  margin: 0px;
+}
+
+div.postedByArt
+Span {
+  margin-right: 15px;
+}
+
+#Art_Display {
+  padding-top: 2px;
+}
+
+div#Art_Display
+Span {
+  float: right;
+}
+
+.artStory {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+div#artComments
+H3 {
+  border-top: solid 1px #d9d9d9;
+  border-bottom: solid 1px #D9D9D9;
+  color: #fff;
+  font-family: arial;
+  font-size: 16px;
+  padding: 9px 0px 9px 6px;
+  margin: 0px;
+  background: #10254A;
+}
+
+div#artComments
+Span {
+  font-size: 13px;
+  color: #225FB2;
+  color: #ededed;
+  font-weight: normal;
+}
+
+
+div#addComment
+H3 {
+  font-size: 16px;
+  font-weight: bold;
 }

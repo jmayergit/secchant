@@ -1,7 +1,7 @@
 <%= form_for @comment do |comment_form| %>
   <%= comment_form.hidden_field :art_id, :value => @art.id %>
 
-  <%= comment_form.text_field :text %> <br /> <br />
+  <%= comment_form.text_area :text %> <br /> <br />
 
   <%= comment_form.submit value: "Create", class: "custButton" %>
 <% end %>

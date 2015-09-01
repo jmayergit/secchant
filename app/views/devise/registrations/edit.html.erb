@@ -3,9 +3,106 @@
     <%= render "/devise/shared/forums" %>
   </div>
 
+
+
+
+
+
+
+
+
+
   <div class="eleven wide column" id="ContentM">
-    <div class="login">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+
+
+
+
+
+
+
+      <div class="ui grid">
+
+
+        <div class="sixteen wide center aligned column" id="PageTitle">
+          User Profile
+        </div>
+
+
+
+
+
+        <div class="twelve wide center aligned column">
+
+
+
+          <table class="ui celled striped table">
+
+
+
+
+            <thead>
+
+
+
+
+              <tr>
+
+
+
+                <th>
+
+
+
+
+
+                  <p>
+                    <span id="overview">Overview</span>
+
+
+
+
+
+                    <%= link_to "[Find all posts by #{@user.user_name}]", topic_search_path(user: @user) %>
+                  </p>
+
+
+
+
+                </th>
+
+
+
+              </tr>
+
+
+
+
+
+            </thead>
+
+
+
+
+
+
+
+          </table>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+      </div>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
@@ -46,5 +143,6 @@
       <%= link_to "Back", :back %>
     </div>
 
-  </div>
+
+
 </div>

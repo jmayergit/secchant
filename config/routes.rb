@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :arts
 
-  resources :comments
+  resources :comments, only: [:new, :create, :destroy]
 
   get '/users/:id/prof' => 'profiles#show', as: 'profile'
 

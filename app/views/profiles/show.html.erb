@@ -1,29 +1,65 @@
-<div class="four wide column" id="ContentLProf">
+<div class="four wide column" id="ContentL">
   <%= render "devise/shared/forums" %>
 </div>
 
 <div class="eight wide column">
   <div id="ContentRProf">
-    <table class="ui table">
-      <tbody>
-        <tr>
-          <td>
 
-            <div class="AvaHdr">
-              <div class="Ava1">
-                <%= image_tag "UserAva1.gif", id: "avatar" %>
-              </div>
-            </div>
+    <div class="ui grid">
 
-            <div class="uName">
-              
-            </div>
 
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+
+
+      <div class="two column row" id="AvaHdr">
+
+
+        <div class="four wide column" id="Ava">
+
+          <%= image_tag "UserAva1.gif" %>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="ten wide left aligned column" id="uName">
+
+
+          <div class="uName1">
+
+
+
+            <h2> <%= @user.user_name %> </h2>
+
+
+
+          </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+  </div> <br />
 
   <div id="ContentRProf2">
 

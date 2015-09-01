@@ -1,32 +1,270 @@
 <div class="two column row">
+
+
+
   <div class="four wide column" id="ContentL">
     <%= render "devise/shared/forums" %>
   </div>
 
+
+
+
+
+
   <div class="eleven wide column" id="ContentR">
 
-    <h2> <%= @art.title %> <span id="artAuthor">Author: gussler </span> </h2>
-    <div class="ui divider"></div>
 
-    <span id="text"> <%= @art.text %> </span>
-    <div class="ui divider"></div>
 
-    <h3>Comments</h3>
 
-    <% @art.comments.each do |comment| %>
-      <div class="comment" id="<%= "comment-#{comment.id}" %>">
-        <%= comment.text %>
-        <% if user_signed_in? %>
-          <% if comment.belongs_to(current_user) %>
-            <%= link_to "Edit", edit_comment_path(comment) %>
-          <% end %>
-        <% end %>
+    <div class="ui grid">
+
+
+
+
+      <div class="sixteen wide column">
+
+
+
+
+        <span class="Art_Title"> <%= @art.title %> </span>
+
+
+
+
       </div>
-    <% end %>
 
-    <% if user_signed_in? %>
-        <h3>Post A Comment</h3>
-      <%= render "/comments/form" %>
-    <% end %>
+
+
+
+
+
+
+      <div class="sixteen wide column" id="postedByArtColumn">
+
+
+
+        <div class="postedByArt">
+
+
+
+
+          <span> by <%= @art.admin.email %> </span>
+
+
+
+          <%= @art.created_at %>
+
+
+
+
+
+        </div>
+
+
+
+
+        <hr>
+
+
+
+
+
+      </div>
+
+
+
+
+
+      <div class="sixteen wide column" id="Art_Display">
+
+
+
+
+
+
+
+          <span> <%= @art.comments.length %> </span>
+
+
+
+
+
+
+
+        <div class="ui image">
+
+
+
+
+
+          <%= image_tag "" %>
+
+
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+      <div class="sixteen wide column">
+
+
+
+
+        <div class="artStory">
+
+
+
+
+          <%= @art.story %>
+
+
+
+        </div>
+
+
+
+
+        <hr>
+
+
+
+      </div>
+
+
+
+
+
+
+      <div class="sixteen wide column" id="artComments">
+
+
+
+        <h3> Comments (<%= @art.comments.length %>) - <span> Add Comments </span> </h3>
+
+
+
+
+        <div class="ui grid">
+
+
+
+
+          <% @art.comments.each do |comment| %>
+
+
+
+          <div class="three column row">
+
+
+            <div class="three wide column">
+
+
+              <%= image_tag "UserAva1.gif" %>
+
+
+            </div>
+
+
+
+
+            <div class="ten wide column">
+
+
+              <%= comment.text %>
+
+
+
+            </div>
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <% end %>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+      <div class="sixteen wide column" id="addComment">
+
+
+
+        <% if user_signed_in? %>
+
+
+
+
+        <h3>Add a Comment</h3>
+
+
+
+        <%= render "/comments/form" %>
+
+
+
+
+
+
+        <% end %>
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
   </div>
+
+
+
+
+
 <div>
