@@ -4,17 +4,36 @@
 
 @import "semantic-ui";
 
+.image {
+
+}
+
+.forumTitle {
+
+}
+
+.forumDescription {
+  font-size: 12px;
+}
+
 #ForumsH {
   color: #a89eaf;
   padding: 2px 2px 2px 2px;
 }
 
 .Forums1{
-  padding: 7px 2px 2px 2px;
+  display: inline-flex;
+  padding: 7px 2px 10px 2px;
+}
+
+.rightSide {
+  max-width: 130px;
+  margin: -8px 0px 0px 10px;
 }
 
 .homeLNav {
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 15px;
   color: rgba(0, 0, 0, 0.8);
 }
 

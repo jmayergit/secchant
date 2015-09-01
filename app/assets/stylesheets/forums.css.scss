@@ -5,7 +5,7 @@
 #sixteenWideColumn {
   background-color: white;
   padding-top: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 #twoColumnRow {
@@ -13,6 +13,7 @@
 }
 
 #twoWideColumn {
+  padding-right: 5px;
   padding-left: 0px;
 }
 
@@ -31,6 +32,7 @@
   border-bottom: solid 1px #D3D3D3;
   padding: 10px 0px 0px 10px;
   height: 100vh;
+  word-wrap: break-word;
 }
 
 #bodyR {
@@ -44,8 +46,12 @@
   padding: 20px 2px 2px 20px;
 }
 
+#forumTable {
+  margin-top: 0em;
+}
+
 .PgBoardName {
-  color: #000066;
+  color: #262626;
   font-size: 25px;
   font-weight: 900;
 }
@@ -80,19 +86,34 @@
   background-color: #10254A;
 }
 
+#theadCenter {
+  color: white;
+  FONT-WEIGHT: bold;
+  background-color: #10254A;
+  text-align: center;
+}
+
 .topic {
   width: 60%;
 }
 
 #tdata {
-  text-align: center;
   color: #000066;
   font-size: 15px;
 }
 
+#replies {
+  color: #000066;
+  font-size: 15px;
+  text-align: center;
+}
+
+#lastPost {
+  color: #000066;
+  font-size: 15px;
+  text-align: center;
+}
 .pagingLink {
-  padding-left: 3px;
-  float: left;
   color: #000066;
   FONT-WEIGHT: bold;
 }

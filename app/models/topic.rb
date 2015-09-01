@@ -96,4 +96,19 @@ class Topic < ActiveRecord::Base
   def set_last_post_created_at_to_now
     self.last_post_created_at = DateTime.now()
   end
+
+
+  '''
+  Prints the forum name of a topic
+  '''
+  def self.get_forum_name(topic)
+    forum = topic.forum
+    name = forum.name
+
+    if forum.team_forum
+      name += " Sports Board"
+    end
+
+    return name
+  end
 end

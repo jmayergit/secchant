@@ -6,11 +6,11 @@
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
 
-        <%= link_to @forum.name, forum_show_path(@forum), :class => 'PgBoardName' %> <br /> <br />
+        <%= link_to @forum.get_name, forum_show_path(@forum), :class => 'PgBoardName' %> <br /> <br />
           <%= link_to "Start Topic", topic_new_path(:forum=>@forum.id), :class => "pagingLink" %>
           <%= will_paginate @topics %>
 
-      <table class="ui celled striped table">
+      <table class="ui celled striped table" id="forumTable">
         <thead>
           <tr><th id="thead">
             Topic
@@ -20,11 +20,11 @@
             Started By
           </th>
 
-          <th id="thead">
+          <th id="theadCenter">
             Replies
           </th>
 
-          <th id="thead">
+          <th id="theadCenter">
             Last Post
           </th>
         </tr>
@@ -40,17 +40,19 @@
               <% end %>
               <%= link_to topic.subject, topic_show_path(topic), :class => 'pagingLink' %>
 
-              <% if current_user.moderator %>
-                <div class="modLinks">
-                  <%= form_tag(controller: "topics", action: "sticky", method: "post") do %>
-                    <%= hidden_field(:topic, :id, :value => topic.id) %>
-                    <%= submit_tag("Sticky") %>
-                  <% end %>
-                  <%= form_tag(controller: "topics", action: "anchor", method: "post") do %>
-                    <%= hidden_field(:topic, :id, :value => topic.id) %>
-                    <%= submit_tag("Anchor") %>
-                  <% end %>
-                </div>
+              <% if user_signed_in? %>
+                <% if current_user.moderator %>
+                  <div class="modLinks">
+                    <%= form_tag(controller: "topics", action: "sticky", method: "post") do %>
+                      <%= hidden_field(:topic, :id, :value => topic.id) %>
+                      <%= submit_tag("Sticky") %>
+                    <% end %>
+                    <%= form_tag(controller: "topics", action: "anchor", method: "post") do %>
+                      <%= hidden_field(:topic, :id, :value => topic.id) %>
+                      <%= submit_tag("Anchor") %>
+                    <% end %>
+                  </div>
+                <% end %>
               <% end %>
 
             </td>
@@ -59,11 +61,11 @@
               <%= topic.user.user_name %>
             </td>
 
-            <td id="tdata" class="replies" >
+            <td id="replies">
               <%= topic.posts.count - 1 %>
             </td>
 
-            <td id="tdata" class="lastPost">
+            <td id="lastPost">
               <%= link_to Topic.print_lpca(topic), topic_show_path(topic, :page => Post.find_page(topic.posts.last), anchor: "post-#{topic.posts.last.id}"), :class => "findPage" %>
             </td>
           </tr>

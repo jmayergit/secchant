@@ -6,7 +6,20 @@
     <% for forum in @secForums %>
       <% if forum.name != 'Help Board' %>
         <div class="Forums1">
-          <%= image_tag forum.image, class: "forumImage" %> <%= link_to forum.name, forum_show_path(forum), :class => "homeLNav" %>
+
+          <div class="image">
+            <%= image_tag forum.image, class: "forumImage" %>
+          </div>
+
+          <div class="rightSide">
+            <div class="forumTitle">
+               <%= link_to forum.name, forum_show_path(forum), :class => "homeLNav" %>
+            </div>
+            <div class="forumDescription">
+              <%= forum.description %>
+            </div>
+          </div>
+          
         </div>
       <% end %>
     <% end %>
@@ -20,7 +33,20 @@
   <% if @teamForums %>
     <% for forum in @teamForums  %>
       <div class="Forums1">
-        <%= image_tag forum.image, class: "forumImage" %> <%= link_to forum.name, forum_show_path(forum), :class => "homeLNav" %>
+
+        <div class="iamge">
+          <%= image_tag forum.image, class: "forumImage" %>
+        </div>
+
+        <div class="rightSide">
+          <div class="forumTitle">
+            <%= link_to forum.name, forum_show_path(forum), :class => "homeLNav" %>
+          </div>
+          <div class="forumDescription">
+            <%= forum.description %>
+          </div>
+        </div>
+
       </div>
     <% end  %>
   <% end %>

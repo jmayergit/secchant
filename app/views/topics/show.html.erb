@@ -6,13 +6,13 @@
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
 
-      <%= link_to @topic.forum.name, forum_show_path(@topic.forum), :class => "PgBoardName" %> <br /> <br />
+      <%= link_to Topic.get_forum_name(@topic), forum_show_path(@topic.forum), :class => "PgBoardName" %> <br /> <br />
 
       <%= link_to "Return", forum_show_path(@topic.forum), :class => "pagingLink" %>
       <div class="pagination">
         <%= will_paginate @posts %>
       </div>
-      <table class="ui celled striped table">
+      <table class="ui celled striped table" id="topicsTable">
         <thead>
           <tr>
             <th id="thead">
@@ -41,7 +41,7 @@
               </td>
 
               <td id="message">
-                <span id="subject"> <%= post.topic.subject %> </span> <span id="date"> (Posted on <%= post.created_at %>) </span>
+                <span id="subject"> re: <%= post.topic.subject %> </span> <span id="date"> (Posted on <%= post.created_at %>) </span>
 
                 <div class="ui divider"></div>
 

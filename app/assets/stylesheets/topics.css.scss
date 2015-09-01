@@ -26,6 +26,10 @@
   FONT-WEIGHT: bold;
 }
 
+#topicsTable {
+  margin-top: 0em;
+}
+
 #postedBy {
   width: 20%;
 }
@@ -84,6 +88,7 @@ label[for=topic_subject] {
 }
 
 .pText {
+  line-height: 17px;
   word-wrap: break-word;
   font-family: arial;
   min-height: 102px;
@@ -115,19 +120,21 @@ label[for=topic_subject] {
 }
 
 #verticalAlign {
+  padding: 5px 0px 0px 5px;
   vertical-align: top;
   position: relative;
 }
 
 .backToTop {
-  font-size: 11px;
+  font-size: 10px;
   position: absolute;
-  color: black;
+  color: gray;
   bottom: 10px;
+  padding: 0px 0px 0px 2px;
 }
 
 .backToTop:hover {
-  color: blue;
+  color: gray;
 }
 
 .rep {
