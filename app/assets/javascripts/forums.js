@@ -92,7 +92,33 @@ $(document).on('ready page:load', function(e) {
   }
 
 
-  $('.editComment').click(function(e) {
-    console.log("Edit Comment Btn Clicked");
-  })
+  $('.upvote').click(function(e) {
+    console.log("Upvote");
+    // disable button
+    // ajax post
+    // $.ajax(function() {
+    //   method: "post",
+    //   path: "topics/posts/:id/upvote",
+    //   data: {
+    //
+    //   }
+    // })
+  });
+
+//   jQuery.ajax({
+//             url: "/topics/posts/3/downvote",
+//             type: "post",
+//             dataType: "hash",
+//             data: {
+//
+//             },
+//             success: function() { console.log("success") }
+// });
+
+  $('img#downArrow').click(function(e) {
+    console.log("Downvote");
+    // console.log(printProperties(e));
+    var post_id = e.target.closest('tr');
+    console.log(e.target.closest('tr').id);
+  });
 });

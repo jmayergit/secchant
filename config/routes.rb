@@ -41,6 +41,13 @@ Rails.application.routes.draw do
   get '/topics/posts/:id/edit' => 'posts#edit', as: 'posts_edit'
 
   patch '/topics/posts/:id' => 'posts#update', as: 'post'
+
+  post '/topics/posts/:id/upvote' => 'posts#upvote', as: 'post_upvote'
+
+  post '/topics/posts/:id/downvote' => 'posts#downvote', as: 'post_downvote'
+
+  delete '/topics/posts/:id' => 'posts#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

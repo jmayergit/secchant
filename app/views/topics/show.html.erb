@@ -68,6 +68,11 @@
 
                     <%= link_to post.print_replies, reply_search_path(post: post), class: "rep" %>
 
+
+
+                    <%= image_tag "uArw.png", id: "upArrow" %> <%= post.upvotes %>
+                    <%= image_tag "dArw.png", id: "downArrow" %> <%= post.downvotes %>
+
                   <% end %>
 
               </td>

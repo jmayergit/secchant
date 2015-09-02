@@ -103,8 +103,13 @@
       </div>
     </div>
 
-    <div class="inline">
+    <div class="ui simple dropdown item">
       More
+      <div class="menu">
+        <div class="item"> <%= link_to "Member List", user_search_path, id: "MenuLink" %> </div>
+        <div class="item"> <%= link_to "Help Forum", forum_show_path(@helpForum), id: "MenuLink" %> </div>
+        <div class="item"> Guidelines/FAQ </div>
+      </div>
     </div>
 
   </div>

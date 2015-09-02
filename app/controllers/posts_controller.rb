@@ -40,6 +40,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    puts "DESTROY ACTION" * 100
+  end
+
+  def upvote
+    @post = Post.find(params[:id])
+    upvotes = @post.upvotes += 1
+
+    @post.update(upvotes: upvotes)
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    downvotes = @post.downvotes += 1
+
+    @post.update(downvotes: downvotes)
+  end
+
   private
 
   def posts_params
