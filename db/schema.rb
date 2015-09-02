@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901223222) do
+ActiveRecord::Schema.define(version: 20150902003627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20150901223222) do
     t.integer  "topic_id"
     t.text     "message"
     t.string   "replies"
-    t.integer  "upvotes"
-    t.integer  "downvotes"
+    t.integer  "upvotes",    default: 0
+    t.integer  "downvotes",  default: 0
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
