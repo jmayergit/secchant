@@ -4,6 +4,14 @@
 
 @import "semantic-ui";
 
+#ContentRHome {
+  padding-bottom: 40px;
+  font-size: 20px;
+  box-shadow: 0px 0px 0px 0.2px gray;
+  border-radius: 3px;
+  background-color: white;
+}
+
 #fourWideColumnHome {
   padding: 0px 0px 0px 0px;
 }
@@ -14,6 +22,10 @@
 
 #twoColumnRowHome {
   padding: 0px 0px 0px 0px;
+}
+
+#Home_Art_Info_Column {
+  padding-left: 0px;
 }
 
 #ForumsH {
@@ -51,14 +63,21 @@
 }
 
 .Art_SEC {
+  font-size: 20px;
   border-bottom: 1px solid #ededed;
   font-weight: normal;
-  margin: 8px 0px;
-  padding: 0px 0px 10px 0px;
+  margin: 8px 0px 0px 0px;
+  padding: 0px 0px 6px 0px;
+}
+
+#Latest_SEC_News {
+  padding-bottom: 0px;
+}
+
+#Art_Home_Row {
+  border-bottom: 1px solid #ededed;
 }
 
 #newArtButton {
-  position: absolute;
-  top: 10px;
-  left: 90%;
+  float: right;
 }

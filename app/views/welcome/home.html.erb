@@ -5,39 +5,146 @@
     <%= render "devise/shared/forums" %>
   </div>
 
-  <div class="eleven wide column" id="ContentR">
-      <h2 class="Art_SEC">Latest SEC News</h2>
-      <% if admin_signed_in? %>
-      <%= link_to "New Art", new_art_path, class: "custButton", id: "newArtButton" %>
-        <!-- <button type="button" name="create_art" class="custButton" id="newArtButton">New Art</button> -->
-      <% end %>
+
+
+
+
+
+  <div class="eight wide column" id="ContentRHome">
+
+
+    <div class="ui grid">
+
+
+
+      <div class="sixteen wide column" id="Latest_SEC_News">
+
+
+
+        <h2 class="Art_SEC"> Latest SEC News </h2>
+
+
+
+        <% if admin_signed_in? %>
+
+
+
+          <%= link_to "New Art", new_art_path, class: "custButton", id: "newArtButton" %>
+
+
+        <% end %>
+
+
+      </div>
+
+
+
+
+
 
       <% @arts.each do |art| %>
 
-        <div class="Art">
 
-          <div class="Art_Image">
-            <%= image_tag art.image.url %>
-          </div>
 
-          <div class="Art_Text1">
 
-            <h2 id="tableCell">
-              <%= link_to art.title, art_path(art), class: "Art_Title1" %>
-            </h2>
+          <div class="two column row" id="Art_Home_Row">
 
-            <div class="Art_Text2">
-              <%= art.text %>
+
+
+
+            <div class="eight wide column" id="Picture_Column_Home">
+
+
+
+
+
+
+                <%= image_tag art.image.url, id: "Home_Art_Image" %>
+
+
+
+
+
+
+
+
+
             </div>
 
+
+
+
+            <div class="eight wide column" id="Home_Art_Info_Column">
+
+
+
+
+
+              <p>
+
+
+                <%= link_to art.title, art_path(art), class: "Art_Title_Home" %>
+
+
+              </p>
+
+
+
+
+
+
+
+
+              <p class="Art_Text_Home">
+
+                <%= art.text %>
+
+
+              </p>
+
+
+
+
+
+                <% if current_admin %>
+
+                  <%= link_to "delete", art_path(art), method: :delete, class: "custButton" %>
+
+                <% end %>
+
+
+            </div>
+
+
+
+
+
+
           </div>
 
-          <% if current_admin %>
-            <%= link_to "delete", art_path(art), method: :delete %>
-          <% end %>
 
-        </div>
 
-        <% end %>
+
+
+
+      <% end %>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
   </div>
+
+
+
+
+
 </div>

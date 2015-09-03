@@ -3,12 +3,12 @@ class Art < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   has_attached_file :image,
-                    styles: { standard: ["210x130#", :jpg] },
+                    styles: {  },
                     storage: :s3,
                     s3_credentials: 'aws.yaml',
                     bucket: "secchant.aws.bucket",
                     url: 'secchant.aws.bucket.s3.amazonaws.com',
-                    path: "uploads/#{SecureRandom.uuid}",
+                    path: "uploads/art/:id",
                     s3_host_name: 's3-us-west-1.amazonaws.com'
 
   validates_attachment :image,
