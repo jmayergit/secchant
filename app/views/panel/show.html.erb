@@ -1,6 +1,6 @@
 <div class="sixteen wide column">
   <div class="">
-    <h2>Users</h2>
+    <h2>Users (<%= @users.length %>) </h2>
     <table class="ui inverted black table">
       <thead>
         <tr>
@@ -47,7 +47,7 @@
       </tbody>
     </table>
 
-    <h2>Topics</h2>
+    <h2>Topics (<%= @topics.length %>) </h2>
     <table class="ui inverted orange table">
       <thead>
         <tr>
@@ -91,7 +91,7 @@
       </tbody>
     </table>
 
-    <h2>Posts</h2>
+    <h2>Posts (<%= @posts.length %>) </h2>
     <table class="ui inverted green table">
       <thead>
         <tr>
@@ -117,6 +117,38 @@
             </td>
             <td>
               <%= post.topic.subject %> <%= link_to "Delete", "/topics/posts/#{post.id}", method: :delete, id: "deleteLink" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <h2>Comments (<%= @comments.length %>) </h2>
+    <table class="ui inverted blue table">
+      <thead>
+        <tr>
+          <th>
+            Text
+          </th>
+          <th>
+            Author
+          </th>
+          <th>
+            Art
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+            <td>
+              comment.text
+            </td>
+            <td>
+              comment.user.user_name
+            </td>
+            <td>
+              comment.art.title <%= link_to "Delete", comment_path(comment), method: :delete, id: "deleteLink" %>
             </td>
           </tr>
         <% end %>

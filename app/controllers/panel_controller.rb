@@ -7,6 +7,8 @@ class PanelController < ApplicationController
     @topics = Topic.all
 
     @posts = Post.all
+
+    @comments = Comment.all
   end
 
   def mod

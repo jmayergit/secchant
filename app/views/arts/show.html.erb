@@ -83,7 +83,7 @@
 
 
 
-          <span> <%= @art.comments.length %> </span>
+          <span> <%= @art.comments.length - 1 %> </span>
 
 
 
@@ -148,7 +148,7 @@
 
 
 
-        <h3> Comments (<%= @art.comments.length %>) - <span> Add Comments </span> </h3>
+        <h3> Comments (<%= @art.comments.length - 1 %>) - <span> Add Comments </span> </h3>
 
 
 
@@ -162,35 +162,69 @@
 
 
 
-          <div class="three column row">
-
-
-            <div class="three wide column">
-
-
-              <%= image_tag "UserAva1.gif" %>
-
-
-            </div>
 
 
 
-
-            <div class="ten wide column">
-
-
-              <%= comment.text %>
-
-
-
-            </div>
+            <% if comment.persisted? %>
 
 
 
 
 
 
-          </div>
+
+
+              <div class="three column row">
+
+
+                <div class="three wide column">
+
+
+                  <%= image_tag "UserAva1.gif" %>
+
+
+                </div>
+
+
+
+
+                <div class="ten wide column">
+
+
+                  <%= comment.text %>
+
+
+
+
+
+
+                  <% if admin_signed_in? %>
+
+
+                    <%= link_to "delete", comment_path(comment), method: :delete %>
+
+
+
+                  <% end %>
+
+
+
+                </div>
+
+
+
+
+
+
+              </div>
+
+
+
+
+
+
+
+            <% end %>
 
 
 

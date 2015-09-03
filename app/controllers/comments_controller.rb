@@ -14,7 +14,16 @@ class CommentsController < ApplicationController
     end
   end
 
-  def edit
+  def destroy
+    @comment = Comment.find(params[:id])
+
+    if @comment.destroy
+      flash[:success] = "Comment Was Successfully Destroyed"
+      redirect_to admin_panel_path
+    else
+      flash[:error] = "Unable To Destroy Comment"
+      redirect_to admin_panel_path
+    end
   end
 
   private
