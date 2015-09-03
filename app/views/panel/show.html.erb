@@ -81,7 +81,7 @@
             <%= topic.forum.name %>
           </td>
           <td>
-            <%= topic.posts.length %>
+            <%= topic.posts.length %> <%= link_to "Delete", "/topics/#{topic.id}", method: :delete, id: "deleteLink" %>
           </td>
           <td>
 
@@ -116,7 +116,7 @@
               <%= post.user.user_name %>
             </td>
             <td>
-              <%= post.topic.subject %>
+              <%= post.topic.subject %> <%= link_to "Delete", "/topics/posts/#{post.id}", method: :delete, id: "deleteLink" %>
             </td>
           </tr>
         <% end %>

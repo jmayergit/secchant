@@ -6,11 +6,12 @@ input[name="Toggle"] {
   // color: black;
 }
 
-#destroyLink {
+#deleteLink {
+  float: right;
   color: white;
   font-weight: bold;
 }
 
-#destroyLink:hover {
+#deleteLink:hover {
   color: white;
 }

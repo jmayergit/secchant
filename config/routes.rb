@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   patch '/topics/:id/edit' => 'topics#update'
 
+  delete '/topics/:id' => 'topics#destroy'
+
   post '/topics/sticky' => 'topics#sticky', as: 'sticky'
 
   post '/topics/anchor' => 'topics#anchor', as: 'anchor'

@@ -32,6 +32,10 @@
 
           </div>
 
+          <% if current_admin %>
+            <%= link_to "delete", art_path(art), method: :delete %>
+          <% end %>
+
         </div>
 
         <% end %>

@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
-  before_action :require_login, except: :show
+  before_action :require_login, except: [:show, :destroy]
+  before_action :authenticate_admin!, only: :destroy
   before_action :format_post_params, only: :create
 
   def new
@@ -40,6 +41,17 @@ class TopicsController < ApplicationController
     else
       flash[:error] = "Subject cannot be blank."
       redirect_to topic_path(@topic)
+    end
+  end
+
+  def destroy
+    @topic = Topic.find(params[:id])
+
+    if @topic.destroy
+      flash[:success] = "Topic Successfully Destroyed"
+      redirect_to admin_panel_path
+    else
+      flash[:error] = "Unable to Destroy Topic"
     end
   end
 

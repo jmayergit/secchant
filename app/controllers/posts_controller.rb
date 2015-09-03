@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_admin!, only: :destroy
 
   def new
     @topic = Topic.find(params[:topic_id])
@@ -41,7 +42,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    puts "DESTROY ACTION" * 100
+    @post = Post.find(params[:id])
+
+    if @post.destroy
+      flash[:success] = "Post Successfully Destroyed"
+      redirect_to admin_panel_path
+    else
+      flash[:error] = "Post Was Not Destroyed"
+      redirect_to admin_panel_path
+    end
   end
 
   def upvote

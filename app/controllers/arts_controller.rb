@@ -1,5 +1,6 @@
 class ArtsController < ApplicationController
   before_action :authenticate_admin!, except: :show
+
   def show
     @art = Art.find(params[:id])
 
@@ -18,6 +19,16 @@ class ArtsController < ApplicationController
     else
       flash[:error] = "Unable to save"
       redirect_to new_art_path
+    end
+  end
+
+  def destroy
+    @art = Art.find(params[:id])
+    if @art.destroy
+      flash[:success] = "Art Successfully Destroyed"
+      redirect_to "/"
+    else
+      flash[:error] = "Art Was Not Destroyed"
     end
   end
 
