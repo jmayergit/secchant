@@ -30,7 +30,7 @@
 
 
               <td id="verticalAlign">
-                <span class="postUserName"> <%= post.user.user_name %> </span> <br />
+                <%= link_to post.user.user_name, profile_path(post.user), id: "postProfileLink" %> <br />
                 <div class="userInfo">
 
 
@@ -64,14 +64,41 @@
 
                     <%= link_to "Reply", posts_new_path(:topic_id=>params[:id], :reply_id=>post.id), :class => 'custButton' %>
 
-                    request admin
 
                     <%= link_to post.print_replies, reply_search_path(post: post), class: "rep" %>
 
 
 
-                    <%= image_tag "uArw.png", id: "upArrow" %> <%= post.upvotes %>
-                    <%= image_tag "dArw.png", id: "downArrow" %> <%= post.downvotes %>
+
+                    <% if current_user %>
+
+
+
+
+                          <span id="arrows">
+
+
+                            <%= image_tag "uArw.png", id: "upArrow" %> <%= post.upvotes %>
+
+
+
+
+
+                            <%= image_tag "dArw.png", id: "downArrow" %> <%= post.downvotes %>
+
+
+
+                           </span>
+
+
+
+
+
+
+                    <% end %>
+
+
+
 
                   <% end %>
 

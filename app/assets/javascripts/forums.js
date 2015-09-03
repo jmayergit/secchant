@@ -93,7 +93,6 @@ $(document).on('ready page:load', function(e) {
 
 
   $('.upvote').click(function(e) {
-    console.log("Upvote");
     // disable button
     // ajax post
     // $.ajax(function() {

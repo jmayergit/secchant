@@ -10,3 +10,75 @@
   border-radius: 3px;
   background-color: white;
 }
+
+#profileColumnTable {
+  padding-top: 0px;
+}
+
+#theadProf {
+  color: white;
+  FONT-WEIGHT: bold;
+  background-color: #10254A;
+  font-size: 12px;
+  font-family: verdana;
+}
+
+.thirtyPercent {
+  width: 30%;
+}
+
+#profileRecentPosts {
+  border-bottom: 1px solid #ededed;
+  font-size: 20px;
+  padding: 0px 0px 7px 0px;
+  margin: 8px 0px;
+  font-weight: normal;
+}
+
+
+.profileTopicLink {
+  font-family: Arial;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000066;
+}
+
+.profileTopicLink:hover {
+  color: #00006;
+}
+
+.profileProfileLink {
+  font-family: Times New Roman;
+  color: Black;
+  font-size: 13px;
+}
+
+.profilePostInfo {
+  padding: 0px 0px 8px 0px;
+  border-bottom: 1px solid #C0C0C0;
+}
+
+div.profilePostInfo
+Span {
+  color: Black;
+  font-size: 10px;
+}
+
+.profilePostMessage {
+  padding: 5px 0px 0px 0px;
+  font-size: 13px;
+  line-height: 17px;
+  word-wrap: break-word;
+  font-family: arial;
+}
+
+.profileTableMeat {
+  padding: 35px 0px 30px 0px;
+  font-family: arial;
+  font-size: 13px;
+}
+
+.profileBottomLinks {
+  font-size: 11px;
+  font-family: verdana, Lucida Sans Typewriter, helvetica;
+}

@@ -42,6 +42,27 @@
 
 
 
+          <div class="profileLinks">
+
+
+            <%= link_to "All posts", post_search_path(@user) %>
+
+
+
+
+
+
+            <%= link_to "All topics", topic_search_path(@user) %>
+
+
+
+
+          </div>
+
+
+
+
+
 
         </div>
 
@@ -53,15 +74,549 @@
 
 
 
+
+
+      <div class="sixteen wide column" id="profileColumnTable">
+
+
+
+
+          <table class="ui celled striped table">
+
+
+
+
+
+
+            <tbody>
+
+
+
+                <tr>
+
+
+
+                  <td class="thirtyPercent">
+
+
+
+
+
+                    Favorite team:
+
+
+
+
+
+                  </td>
+
+
+
+
+                  <td class="">
+
+
+
+
+
+
+
+
+                  </td>
+
+
+
+                </tr>
+
+
+
+                <tr>
+
+
+
+
+                  <td id="thirtyPercent">
+
+
+
+                    Location:
+
+
+
+
+                  </td>
+
+
+
+
+
+                  <td>
+
+
+
+
+
+
+
+                  </td>
+
+
+
+
+
+                </tr>
+
+
+
+                <tr>
+
+
+
+                  <td class="thirtyPercent">
+
+
+
+
+                      Biography:
+
+
+
+                  </td>
+
+
+
+
+
+                  <td class="">
+
+
+
+
+
+
+
+                  </td>
+
+
+
+
+
+
+                </tr>
+
+
+
+
+
+                <tr>
+
+
+
+                  <td class="thirtyPercent">
+
+
+
+
+                      Interests:
+
+
+
+
+                  </td>
+
+
+
+
+                  <td>
+
+
+
+
+
+
+                  </td>
+
+
+
+
+
+                </tr>
+
+
+
+
+                <tr>
+
+
+
+
+
+
+                  <td class="thirtyPercent">
+
+
+
+                      Occupation:
+
+
+                  </td>
+
+
+
+
+
+
+                  <td class="">
+
+
+
+
+
+
+                  </td>
+
+
+
+
+
+
+                </tr>
+
+
+
+
+
+                <tr>
+
+
+
+
+
+
+
+
+                  <td class="thirtyPercent">
+
+
+
+                    Number of Posts:
+
+
+
+                  </td>
+
+
+
+
+
+
+                  <td>
+
+
+
+                    <%= @user.posts.length %>
+
+
+
+                  </td>
+
+
+
+                </tr>
+
+
+
+
+                <tr>
+
+
+
+                  <td class="thirtyPercent">
+
+
+                    Registered on:
+
+
+                  </td>
+
+
+
+
+                  <td class="">
+
+
+                    <%= @user.created_at %>
+
+
+                  </td>
+
+
+
+                </tr>
+
+
+
+
+                <tr>
+
+
+
+                  <td class="thirtyPercent">
+
+
+
+                    Online Status:
+
+
+                  </td>
+
+
+
+
+
+
+                  <td>
+
+
+
+
+
+
+
+                  </td>
+
+
+
+                </tr>
+
+
+
+            </tbody>
+
+
+
+
+
+
+          </table>
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
     </div>
 
 
 
 
 
-  </div> <br />
+  </div>
+
+
+
+
+
+  <br />
+
+
+
+
+
+
 
   <div id="ContentRProf2">
 
+
+
+
+    <div class="ui grid">
+
+
+
+      <div class="sixteen wide column">
+
+
+
+
+          <h2 id="profileRecentPosts">Recent Posts</h2>
+
+
+
+
+
+
+
+
+          <table class="ui celled striped table">
+
+
+
+            <thead>
+
+
+
+              <tr>
+
+
+
+
+                <th id="theadProf">
+
+
+
+                  Message
+
+
+
+
+                </th>
+
+
+
+              </tr>
+
+
+
+            </thead>
+
+
+
+
+            <tbody>
+
+
+
+              <% @posts.each do |post| %>
+
+
+
+
+                    <tr>
+
+
+
+                      <td>
+
+
+
+                        <div class="profilePostInfo">
+
+
+
+                          <%= link_to "re: #{post.topic.subject}", topic_show_path(post.topic), class: "profileTopicLink" %> - <%= link_to post.user.user_name, profile_path(@user), class: "profileProfileLink" %> <span> on <%= post.created_at %> </span>
+
+
+
+                        </div>
+
+
+
+                        <div class="profilePostMessage">
+
+
+
+                          <%= post.message %>
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="profileTableMeat">
+
+
+                          Posted on <%= link_to post.topic.forum.name, forum_show_path(post.topic.forum) %>
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="">
+
+
+
+
+                          <%= link_to "Jump to Post", "", class: "profileBottomLinks" %> - <%= link_to "View Topic", "", class: "profileBottomLinks" %> - <%= link_to "Replies (#{ post.count_replies })", "", class: "profileBottomLinks" %>
+
+
+
+                        </div>
+
+
+                      </td>
+
+
+
+
+
+
+
+
+
+                    </tr>
+
+
+
+
+
+              <% end %>
+
+
+
+            </tbody>
+
+
+
+
+
+          </table>
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
   </div>
+
+
+
+
+
+
+
+
+
 </div>

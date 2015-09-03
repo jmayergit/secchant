@@ -78,9 +78,14 @@ label[for=topic_subject] {
   width: 440px;
 }
 
-.postUserName {
+#postProfileLink {
+  color: black;
   font-weight: bold;
   font-size: 15px;
+}
+
+#postProfileLink:hover {
+  color: black;
 }
 
 .userInfo {
@@ -141,4 +146,8 @@ label[for=topic_subject] {
   color: #4D4D4D;
   font-size: 11px;
   font-weight: bold;
+}
+
+#arrows {
+  float: right;
 }
