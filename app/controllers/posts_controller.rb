@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user_custom, except: [:show, :destroy, :upvote, :downvote]
   before_action :authenticate_admin!, only: :destroy
 
   def new
@@ -71,5 +71,17 @@ class PostsController < ApplicationController
 
   def posts_params
     params.require(:post).permit(:message, :user_id)
+  end
+
+  def authenticate_user_custom
+    if !user_signed_in?
+      flash[:error] = "You must create an account or be logged in to post"
+
+      redirect_to new_user_session_path
+    elsif current_user.banned
+      flash[:error] = "Yo azz has lost some privileges :/ Feel free to vote though!"
+
+      redirect_to "/"
+    end
   end
 end

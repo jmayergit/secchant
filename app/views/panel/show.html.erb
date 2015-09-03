@@ -12,6 +12,7 @@
           <th>last ip</th>
           <th>sign in count</th>
           <th>moderator</th>
+          <th>banned</th>
         </tr>
       </thead>
       <tbody>
@@ -41,7 +42,129 @@
             </div>
 
             <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </td>
+
+
+
+
+
+
+          <td>
+
+
+
+
+            <%= form_tag(controller: "panel", action: "ban", method: "post") do %>
+
+
+
+
+
+              <%= hidden_field(:user, :id, value: user.id) %>
+
+
+
+
+              <div class="ui mini labeled input">
+
+
+
+
+
+
+                <% if user.banned %>
+
+
+
+                      <div class="ui blue label">
+
+
+
+
+                        <%= user.banned %>
+
+
+
+
+
+                      </div>
+
+
+
+
+                <% else %>
+
+
+
+                      <div class="ui red label">
+
+
+                        <%= user.banned %>
+
+
+
+                      </div>
+
+
+
+
+                <% end %>
+
+
+
+
+
+
+                  <%= submit_tag("Toggle")%>
+
+
+
+
+
+
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+            <% end %>
+
+
+
+
+
+          </td>
+
+
+
+
+
+
+
         </tr>
         <% end %>
       </tbody>

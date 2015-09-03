@@ -38,6 +38,8 @@ Rails.application.routes.draw do
 
   post '/panel/mod' => 'panel#mod', as: 'toggle_mod'
 
+  post '/panel/ban' => 'panel#ban'
+
   get '/topics/:topic_id/posts/:reply_id/new' => 'posts#new', as: 'posts_new'
 
   post '/topics/:topic_id/posts' => 'posts#create', as: 'posts'

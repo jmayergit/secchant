@@ -21,4 +21,17 @@ class PanelController < ApplicationController
 
     redirect_to admin_panel_path
   end
+
+  def ban
+    @user = User.find(params["user"]["id"])
+
+    if @user.banned
+      @user.update(banned: false)
+    else
+      @user.update(banned: true)
+      @user.update(moderator: false)
+    end
+
+    redirect_to admin_panel_path
+  end
 end

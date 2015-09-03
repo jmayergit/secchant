@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :require_login, except: [:show, :destroy]
+  before_action :authenticate_user_custom, except: [:show, :destroy]
   before_action :authenticate_admin!, only: :destroy
   before_action :format_post_params, only: :create
 
@@ -91,11 +91,15 @@ class TopicsController < ApplicationController
       params.require(:topic).permit(:subject, :forum_id, posts_attributes: [:message, :user_id, :id])
     end
 
-    def require_login
-      unless user_signed_in?
-        flash[:error] = "You must be logged on in order to post on this board."
+    def authenticate_user_custom
+      if !user_signed_in?
+        flash[:error] = "You must create an account or be logged in to post"
 
         redirect_to new_user_session_path
+      elsif current_user.banned
+        flash[:error] = "Yo azz has lost some privileges :/"
+
+        redirect_to "/"
       end
     end
 
