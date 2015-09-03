@@ -12,6 +12,7 @@ class ArtsController < ApplicationController
 
   def create
     @art = Art.new(art_params)
+    @art.admin = current_admin
     if @art.save
       redirect_to art_path(@art)
     else
