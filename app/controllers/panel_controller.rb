@@ -3,6 +3,10 @@ class PanelController < ApplicationController
 
   def show
     @users = User.all
+
+    @topics = Topic.all
+
+    @posts = Post.all
   end
 
   def mod

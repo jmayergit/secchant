@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/users/:id/prof' => 'profiles#show', as: 'profile'
 
+  get '/chant/usersearch' => 'search#user', as: 'user_search'
+
   get '/chant/topicsearch' => 'search#topic', as: 'topic_search'
 
   get '/chant/postsearch' => 'search#post', as: 'post_search'

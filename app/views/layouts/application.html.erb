@@ -124,6 +124,14 @@
             </div>
           </div>
         <% end %>
+
+        <% if key == "success" %>
+          <div class="sixteen wide center aligned column" id="successColumn">
+            <div class="">
+              <%= flash[:success] %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
   <% end %>
 

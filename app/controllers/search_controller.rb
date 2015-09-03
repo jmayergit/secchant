@@ -23,4 +23,9 @@ class SearchController < ApplicationController
       end
     end
   end
+
+
+  def user
+    
+  end
 end

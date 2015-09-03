@@ -32,11 +32,12 @@
 
 
 
-        <div class="twelve wide center aligned column">
+        <div class="twelve wide centered column">
+          logged in as: <span id="profileBold"> <%= current_user.user_name %> </span> ( <%= link_to "log out", destroy_user_session_path, id: "profileLink" %> )
 
 
 
-          <table class="ui celled striped table">
+          <table class="ui celled striped table" id="profileTable">
 
 
 
@@ -50,21 +51,33 @@
 
 
 
-                <th>
+                <th id="TopicHead">
 
 
 
 
 
-                  <p>
                     <span id="overview">Overview</span>
 
 
 
 
 
-                    <%= link_to "[Find all posts by #{@user.user_name}]", topic_search_path(user: @user) %>
-                  </p>
+                    <%= link_to "[Find all posts by #{@user.user_name}]", topic_search_path(user: @user), id: "NavLinks2" %>
+
+
+
+
+                </th>
+
+
+
+
+
+
+
+
+                <th id="TopicHead">
 
 
 
@@ -83,6 +96,158 @@
 
 
 
+
+
+
+            <tbody>
+
+
+
+              <tr>
+
+
+
+                <td>
+
+
+                  Registered on :
+
+
+
+                </td>
+
+
+
+
+                <td>
+
+
+                  <%= @user.created_at %>
+
+
+                </td>
+
+
+
+              </tr>
+
+
+
+              <tr>
+
+
+                <td>
+
+                  Number of Posts:
+
+
+                </td>
+
+
+                <td>
+
+
+                  <%= @user.posts.count %>
+
+                </td>
+
+
+
+
+
+              </tr>
+
+
+
+
+              <tr>
+
+
+                <td>
+
+
+                  Email:
+
+
+                </td>
+
+
+                <td>
+
+
+                  <%= @user.email %>
+
+
+                </td>
+
+
+
+              </tr>
+
+
+
+              <tr>
+
+
+                <td>
+
+                  Account Status:
+
+
+                </td>
+
+
+
+
+
+                <td>
+
+
+                  Active
+
+                </td>
+
+
+              </tr>
+
+
+
+
+
+
+            </tbody>
+
+
+
+            <thead>
+
+
+
+              <tr>
+
+
+                <th id="TopicHead">
+
+
+                  Optional Information
+
+
+                </th>
+
+
+
+
+                <th id="TopicHead">
+
+
+
+
+                </th>
+
+
+              </tr>
+
+            </thead>
 
 
 
