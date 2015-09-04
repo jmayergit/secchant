@@ -33,7 +33,7 @@
 
 
         <div class="twelve wide centered column">
-          logged in as: <span id="profileBold"> <%= current_user.user_name %> </span> ( <%= link_to "log out", destroy_user_session_path, id: "profileLink" %> )
+          logged in as: <span id="profileBold"> <%= current_user.user_name %> </span> ( <%= link_to "log out", destroy_user_session_path, method: :delete, id: "profileLink" %> )
 
 
 
@@ -252,7 +252,433 @@
 
 
 
+
+            <tbody>
+
+
+
+
+              <tr>
+
+
+                <td>
+
+
+                  Favorite Team:
+
+
+                </td>
+
+
+
+                <td>
+
+
+
+
+                </td>
+
+
+              </tr>
+
+
+
+
+              <tr>
+
+
+                <td>
+
+
+                  Location:
+
+
+                </td>
+
+
+
+                <td>
+
+
+
+
+
+                </td>
+
+
+              </tr>
+
+
+
+
+              <tr>
+
+
+                <td>
+
+
+                  Biography
+
+
+                </td>
+
+
+
+
+                <td>
+
+
+
+
+
+                </td>
+
+
+              </tr>
+
+
+
+              <tr>
+
+
+                <td>
+
+
+                  Interests:
+
+
+                </td>
+
+
+
+
+                <td>
+
+
+
+
+
+                </td>
+
+
+
+              </tr>
+
+
+
+
+              <tr>
+
+
+
+                <td>
+
+
+                  Occupation:
+
+
+
+                </td>
+
+
+
+
+                <td>
+
+
+
+
+
+                </td>
+
+
+
+
+              </tr>
+
+
+
+
+            </tbody>
+
+
+
+
+
+
+
+
+
+
+            <thead>
+
+
+
+              <tr>
+
+
+                <th id="TopicHead">
+
+
+                  Edit Registration
+
+
+                </th>
+
+
+
+                <th id="TopicHead">
+
+
+
+
+
+                </th>
+
+
+              </tr>
+
+
+
+
+            </thead>
+
+
+
+
+            <tbody>
+
+
+              <tr id="collapseRow">
+
+
+
+                <td>
+
+
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+
+
+
+                        <% if resource.errors %>
+
+
+
+
+
+                            <% resource.errors.messages.keys.each do |key| %>
+
+
+
+                                <tr id="errorRow">
+
+
+                                  <td>
+
+
+                                    <%= key.to_s %>
+
+
+                                  </td>
+
+
+
+                                  <td>
+
+                                    <%= resource.errors.messages[key][0] %>
+
+
+                                  </td>
+
+                                </tr>
+
+
+                            <% end %>
+
+
+
+
+
+
+                        <% end %>
+
+
+
+
+                  <tr>
+
+                    <td>
+
+                      <%= f.label :email %><br />
+
+                    </td>
+
+                    <td>
+
+                      <%= f.email_field :email, autofocus: true %>
+
+                    </td>
+
+
+                  </tr>
+
+
+
+
+
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                    <% end %>
+
+
+                    <tr>
+
+
+                      <td>
+
+                        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+
+
+                      </td>
+
+
+                      <td>
+
+                        <%= f.password_field :password, autocomplete: "off" %>
+
+
+                      </td>
+
+
+
+                    </tr>
+
+
+                    <tr>
+
+
+                      <td>
+
+
+                        <%= f.label :password_confirmation %>
+
+
+                      </td>
+
+
+
+                      <td>
+
+
+                          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+
+
+                      </td>
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+                      <td>
+
+
+                          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+
+
+                      </td>
+
+
+
+
+                      <td>
+
+
+                          <%= f.password_field :current_password, autocomplete: "off" %>
+
+
+                      </td>
+
+
+
+                    </tr>
+
+
+
+
+                        <%= f.submit "Update", id: "profileSubmit" %>
+
+
+
+
+
+
+
+                  <% end %>
+
+
+
+
+                </td>
+
+
+
+
+
+
+              </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+            </tbody>
+
+
+
+
           </table>
+
+
+
+
+
+
+
+
+
+          <div class="cancelAcct">
+
+
+
+            <h3>Cancel my account</h3>
+
+
+
+
+
+
+
+            <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+
+
+
+
+          </div>
+
+
 
 
 
@@ -269,43 +695,7 @@
 
       </div>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
 
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
-        </div>
-
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
-
-        <div class="field">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-          <%= f.password_field :current_password, autocomplete: "off" %>
-        </div>
-
-        <div class="actions">
-          <%= f.submit "Update" %>
-        </div>
-      <% end %>
-
-      <h3>Cancel my account</h3>
-
-      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-      <%= link_to "Back", :back %>
     </div>
 
 

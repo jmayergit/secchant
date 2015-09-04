@@ -24,3 +24,34 @@
 #profileBold {
   font-weight: bold;
 }
+
+#collapseRow {
+  display: table-column;
+}
+
+#profileSubmit {
+  position: absolute;
+  left: 50%;
+  bottom: 130px;
+  color: #000066;
+  background: #F7f7f7;
+  border: solid 1px #C0C0C0;
+  margin-right: 10px;
+  display: block;
+  float: left;
+  width: 75px;
+  text-decoration: none;
+  text-align: center;
+  padding: 4px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.cancelAcct {
+  margin-top: 60px;
+}
+
+#errorRow {
+  background-color: red;
+  color: white;
+}
