@@ -70,4 +70,20 @@ class Post < ActiveRecord::Base
 
     return name
   end
+
+
+  '''
+  '''
+  def self.print_sanitize_msg(post)
+    message = post.message
+    cusswords = [/shit/,/fuck/,/piss/]
+
+    cusswords.each do |cuss|
+      message.gsub!(cuss, "naughty word")
+    end
+
+    message
+
+
+  end
 end

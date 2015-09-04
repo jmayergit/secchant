@@ -46,7 +46,7 @@
                 <div class="ui divider"></div>
 
                 <div class="pText">
-                  <%== post.message.bbcode_to_html %>
+                  <%== Post.print_sanitize_msg(post).bbcode_to_html %>
                 </div>
 
                 <div class="ui divider"></div>
