@@ -98,27 +98,23 @@ class Post < ActiveRecord::Base
 
 
   '''
+  A bad match can occure with valid bbcode, must check
+  a bad match and the absence of a good match to determine
+  a TRUE bad match
   '''
   def self.is_invalid?(post)
-    is_post_invalid = false
-    message = post.message
-    invalid = Regexp.new('\[img\]{0}')
-    match = invalid.match(message)
-    if match != nil
-      is_post_invalid = true
+    result = false
+    good = /\[img\]/
+    bad = /\[img/
+
+    goodMatch = good.match(post.message)
+    badMatch = bad.match(post.message)
+
+
+
+    if badMatch != nil && goodMatch == nil
+      # puts "badMatch"
+      result = true
     end
-
-
-    # invalids.each do |invalid|
-    #   match = invalid.match(message)
-    #   puts "-match-"
-    #   puts match
-    #   puts "-------"
-    #   if match != nil
-    #     is_post_invalid = true
-    #   end
-    # end
-
-    is_post_invalid
   end
 end

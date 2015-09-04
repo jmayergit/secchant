@@ -43,7 +43,12 @@
               <div class="ui divider"></div>
               <div class="pText">
 
-                  <%== Post.print_sanitize_msg(@reply_post).bbcode_to_html %>
+                <% if Post.is_invalid?(@reply_post) %>
+                    <%= Post.print_sanitize_msg(@reply_post) %>
+                <% else %>
+                    <%== Post.print_sanitize_msg(@reply_post).bbcode_to_html %>
+                <% end %>
+
 
               </div>
             </td>
