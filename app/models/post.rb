@@ -73,6 +73,7 @@ class Post < ActiveRecord::Base
 
 
   '''
+  An unfortunate reality
   '''
   def self.print_sanitize_msg(post)
     message = post.message
@@ -82,8 +83,39 @@ class Post < ActiveRecord::Base
       message.gsub!(cuss, "naughty word")
     end
 
+
+    invalids = [/\[ms]/]
+
+    invalids.each do |invalid|
+      message.gsub!(invalid, )
+    end
+
+
     message
 
 
+  end
+
+
+  '''
+  '''
+  def self.is_invalid?(post)
+    is_invalid = false
+    message = post.message
+    invalids = [
+      /\[msg/,
+      //
+    ]
+
+    invalids.each do |invalid|
+      puts "invalid: "
+      puts invalid
+      match = invalid.match(message)
+      if match != nil
+        is_invalid = true
+      end
+    end
+
+    is_invalid
   end
 end
