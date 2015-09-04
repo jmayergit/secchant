@@ -13,6 +13,8 @@ variety of topics related to member Universities.
 
 ### Notable Gems used
 
+* aws-sdk
+
 * paperclip
 
 * ruby-bbcode
