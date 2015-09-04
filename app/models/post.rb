@@ -100,22 +100,25 @@ class Post < ActiveRecord::Base
   '''
   '''
   def self.is_invalid?(post)
-    is_invalid = false
+    is_post_invalid = false
     message = post.message
-    invalids = [
-      /\[msg/,
-      //
-    ]
-
-    invalids.each do |invalid|
-      puts "invalid: "
-      puts invalid
-      match = invalid.match(message)
-      if match != nil
-        is_invalid = true
-      end
+    invalid = Regexp.new('\[img')
+    match = invalid.match(message)
+    if match != nil
+      is_post_invalid = true
     end
 
-    is_invalid
+
+    # invalids.each do |invalid|
+    #   match = invalid.match(message)
+    #   puts "-match-"
+    #   puts match
+    #   puts "-------"
+    #   if match != nil
+    #     is_post_invalid = true
+    #   end
+    # end
+
+    is_post_invalid
   end
 end
