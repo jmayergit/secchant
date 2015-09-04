@@ -75,7 +75,19 @@
 }
 
 #Art_Home_Row {
-  border-bottom: 1px solid #ededed;
+  padding-top: 9px;
+  padding-bottom: 7px;
+}
+
+#noMarginHeader {
+  margin: 0px 0px 0px 0px;
+}
+
+hr {
+  margin: 0px 0px 0px 0px;
+  border-width: 1px 1px 0;
+  border-style: solid;
+  border-color: #ededed;
 }
 
 #newArtButton {
