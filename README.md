@@ -27,7 +27,7 @@ variety of topics related to member Universities.
 
 ### Hosted by Heroku
 
-* http://secchant.herokuapp.com
+* http://www.secchant.com
 
 ### clone of http://www.secrant.com/
 
