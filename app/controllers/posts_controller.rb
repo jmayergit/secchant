@@ -58,6 +58,8 @@ class PostsController < ApplicationController
     upvotes = @post.upvotes += 1
 
     @post.update(upvotes: upvotes)
+
+    redirect_to topic_show_path(@topic, :page => Post.find_page(@post), :anchor => "post-#{@post.id}")
   end
 
   def downvote
@@ -65,6 +67,8 @@ class PostsController < ApplicationController
     downvotes = @post.downvotes += 1
 
     @post.update(downvotes: downvotes)
+
+    redirect_to topic_show_path(@topic, :page => Post.find_page(@post), :anchor => "post-#{@post.id}")
   end
 
   private

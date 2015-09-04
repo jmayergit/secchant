@@ -92,38 +92,42 @@ $(document).on('ready page:load', function(e) {
   }
 
 
-//   $('.upvote').click(function(e) {
-//     // disable button
-//     // ajax post
-//     var re = RegExp.new();
-//     var id = string.match(re);
-//     var url = "/topics/posts/" + id + "/downvote"
-//
-//     jQuery.ajax({
-//                 url: url,
-//                 type: "post",
-//                 dataType: "hash",
-//                 data: {
-//
-//                 },
-//                 success: function() { console.log("success") }
-//     });
-//   });
-//
-// jQuery.ajax({
-//             url: "/topics/posts/3/downvote",
-//             type: "post",
-//             dataType: "hash",
-//             data: {
-//
-//             },
-//             success: function() { console.log("success") }
-// });
-//
-//   $('img#downArrow').click(function(e) {
-//     console.log("Downvote");
-//
-//     var string = e.target.closest('tr');
-//     console.log(e.target.closest('tr').id);
-//   });
+  $('#upArrow').click(function(e) {
+    // disable button
+    // ajax post
+    var string = e.target.closest('tr').id;
+    var re = /[0-9]+/;
+    var id = re.exec(string)[0];
+    var url = "/topics/posts/" + id + "/upvote";
+
+    jQuery.ajax({
+                url: url,
+                type: "post",
+                dataType: "hash",
+                data: {
+
+                },
+                success: function() { console.log("success") }
+    });
+  });
+
+
+
+  $('#downArrow').click(function(e) {
+
+    var string = e.target.closest('tr').id;
+    var re = /[0-9]+/;
+    var id = re.exec(string)[0];
+    var url = "/topics/posts/" + id + "/downvote";
+
+    jQuery.ajax({
+                url: url,
+                type: "post",
+                dataType: "hash",
+                data: {
+
+                },
+                success: function() { console.log("success") }
+    });
+  });
 });

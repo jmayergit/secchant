@@ -35,16 +35,17 @@
         <% end %>
     </div>
 
-    <div class="three wide column" id="fiveWide">
+    <div class="three wide middle aligned column" id="fiveWide">
       <div class="signInMenu">
         <% if admin_signed_in? %>
           <%= link_to "Sign out", destroy_admin_session_path, method: :delete, :class => 'session' %>
         <% else %>
           <% if user_signed_in? %>
+            <%= link_to "Settings", edit_user_registration_path, class: 'session' %> |
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'session' %>
           <% else %>
             <%= link_to "Sign in", new_user_session_path, :class => 'session' %> |
-            <%= link_to "Register", new_user_registration_path, :class => 'registration' %>
+            <%= link_to "Register", new_user_registration_path, :class => 'session' %>
           <% end %>
         <% end %>
       </div>
