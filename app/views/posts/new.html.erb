@@ -6,7 +6,7 @@
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
       <%= render "/posts/bbcode" %>
-      
+
       <%= form_for @post do |f| %>
         <%= hidden_field(:reply_post, :id) %>
         <span id="labelMessage"> <%= f.label :message %> </span> <br />
@@ -42,7 +42,9 @@
               <span id="subject"> <%= @reply_post.topic.subject %> </span>
               <div class="ui divider"></div>
               <div class="pText">
-                <%== @reply_post.message.bbcode_to_html %>
+
+                  <%== Post.print_sanitize_msg(@reply_post).bbcode_to_html %>
+
               </div>
             </td>
           </tr>

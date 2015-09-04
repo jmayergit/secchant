@@ -102,7 +102,7 @@ class Post < ActiveRecord::Base
   def self.is_invalid?(post)
     is_post_invalid = false
     message = post.message
-    invalid = Regexp.new('\[img')
+    invalid = Regexp.new('\[img\]{0}')
     match = invalid.match(message)
     if match != nil
       is_post_invalid = true

@@ -46,11 +46,7 @@
                 <div class="ui divider"></div>
 
                 <div class="pText">
-                  <% if Post.is_invalid?(post) %>
-                    <%= Post.print_sanitize_msg(post) %>
-                  <% else %>
                     <%== Post.print_sanitize_msg(post).bbcode_to_html %>
-                  <% end %>
                 </div>
 
                 <div class="ui divider"></div>
