@@ -151,3 +151,14 @@ label[for=topic_subject] {
 #arrows {
   float: right;
 }
+
+#upvotes {
+  font-weight: bold;
+  color: green;
+  padding-right: 15px;
+}
+
+#downvotes {
+  font-weight: bold;
+  color: red;
+}

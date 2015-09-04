@@ -58,7 +58,7 @@
             </td>
 
             <td id="tdata" class="startedBy">
-              <%= topic.user.user_name %>
+              <%= link_to topic.user.user_name, profile_path(topic.user), id: "forumProfLink" %>
             </td>
 
             <td id="replies">

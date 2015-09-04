@@ -103,11 +103,14 @@ $(document).on('ready page:load', function(e) {
     jQuery.ajax({
                 url: url,
                 type: "post",
-                dataType: "hash",
-                data: {
-
+                success: function() {
+                  // console.log("success") 
                 },
-                success: function() { console.log("success") }
+                complete: function() {
+                  // console.log("complete");
+                  // var upvote_number_string = $('span#upvote').html();
+                  // var upvote_number_int = parseInt(upvote_number_string);
+                }
     });
   });
 
@@ -123,11 +126,13 @@ $(document).on('ready page:load', function(e) {
     jQuery.ajax({
                 url: url,
                 type: "post",
-                dataType: "hash",
-                data: {
-
+                success: function(data) {
+                  // console.log("success");
+                  // console.log(data);
                 },
-                success: function() { console.log("success") }
+                complete: function() {
+                  // console.log("complete");
+                }
     });
   });
 });

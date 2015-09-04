@@ -57,18 +57,30 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     upvotes = @post.upvotes += 1
 
-    @post.update(upvotes: upvotes)
+    respond_to do |format|
+      if @post.update(upvotes: upvotes)
+        format.json { render json: "success" }
+      else
+        format.json { render json: "failure" }
+      end
+    end
 
-    redirect_to topic_show_path(@topic, :page => Post.find_page(@post), :anchor => "post-#{@post.id}")
+
+
   end
 
   def downvote
     @post = Post.find(params[:id])
     downvotes = @post.downvotes += 1
 
-    @post.update(downvotes: downvotes)
+    respond_to do |format|
+      if @post.update(downvotes: downvotes)
+        format.json { render json: "success" }
+      else
+        format.json { render json: "failure" }
+      end
+    end
 
-    redirect_to topic_show_path(@topic, :page => Post.find_page(@post), :anchor => "post-#{@post.id}")
   end
 
   private

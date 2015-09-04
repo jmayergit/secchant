@@ -57,7 +57,7 @@ class Topic < ActiveRecord::Base
       i += 1
     end
 
-    i -= 7
+    i -= 5
 
     central_hour = hours[i]
 
