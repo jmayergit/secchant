@@ -24,11 +24,18 @@
   </div>
 
   <div class="three column row" id="tRant_Blue">
-    <div class="three wide column" id="fiveWide">
-      <%= image_tag "SecRantLogo-v1.gif", id: "tRant_Img" %>
+    <div class="two wide column" id="fiveWide">
+      <!-- <%= image_tag "SecChantLogo-v1-78f7f276ca699ce137db9ca95f90f16b-1.gif", id: "tRant_Img" %> -->
+      <div class="logoChant">
+
+        <span id="logoGold">SEC</span><span id="logoSilver">CHANT</span>
+
+
+      </div>
+
     </div>
 
-    <div class="three wide column" id="fiveWide">
+    <div class="two wide column" id="fiveWide">
         <% if admin_signed_in? %>
           <% if current_admin.god_mode? %>
             <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
@@ -36,7 +43,7 @@
         <% end %>
     </div>
 
-    <div class="three wide middle aligned column" id="fiveWide">
+    <div class="two wide middle aligned column" id="fiveWide">
       <div class="signInMenu">
         <% if admin_signed_in? %>
           <%= link_to "Sign out", destroy_admin_session_path, method: :delete, :class => 'session' %>
