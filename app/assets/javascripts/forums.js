@@ -32,7 +32,7 @@ $(document).on('ready page:load', function(e) {
     var img_url = prompt("Enter a valid image URL: (must include http://):");
 
     if( img_url != null) {
-      var img = "[img](url='" + img_url + "')[/img]";
+      var img = "[img]" + img_url + "[/img]";
 
       var new_msg = current_msg + img;
 
