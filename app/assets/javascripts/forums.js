@@ -82,6 +82,45 @@ $(document).on('ready page:load', function(e) {
     var quote = prompt("Enter the text you wish to quote:");
   })
 
+  $("img#iconLol").click(function(e) {
+    console.log("Clicked LOL Icon");
+    $('textarea').get(0).value = $('textarea').get(0).value + "[img]https://s3-us-west-1.amazonaws.com/secchant.aws.bucket/icons/IconLOL.gif[/img]"
+  })
+
+  $("img#iconPimp").click(function(e) {
+    console.log("Clicked PIMP Icon");
+    $('textarea').get(0).value = $('textarea').get(0).value + "[img]https://s3-us-west-1.amazonaws.com/secchant.aws.bucket/icons/IconPimp.gif[/img]"
+  })
+
+  $("img#iconBow").click(function(e) {
+    console.log("Clicked BOW Icon");
+    $('textarea').get(0).value = $('textarea').get(0).value + "[img]https://s3-us-west-1.amazonaws.com/secchant.aws.bucket/icons/Iconbow.gif[/img]"
+  })
+
+  $("img#iconCheers").click(function(e) {
+    console.log("Clicked CHEERS Icon");
+    $('textarea').get(0).value = $('textarea').get(0).value + "[img]https://s3-us-west-1.amazonaws.com/secchant.aws.bucket/icons/Iconcheers.gif[/img]"
+  })
+
+  $("img#iconWah").click(function(e) {
+    $('textarea').get(0).value = $('textarea').get(0).value + "[img]https://s3-us-west-1.amazonaws.com/secchant.aws.bucket/icons/Iconwah.gif[/img]"
+  })
+
+  $("img#iconGiggle").click(function(e) {
+    console.log("Clicked GIGGLE Icon");
+    $('textarea').get(0).value = $('textarea').get(0).value + "[img]https://s3-us-west-1.amazonaws.com/secchant.aws.bucket/icons/giggle.gif[/img]"
+  })
+
+  $("img#iconShock").click(function(e) {
+    console.log("Clicked SHOCK Icon");
+    $('textarea').get(0).value = $('textarea').get(0).value + "[img]https://s3-us-west-1.amazonaws.com/secchant.aws.bucket/icons/shock.gif[/img]"
+  })
+
+  $("img#iconShrug").click(function(e) {
+    console.log("Clicked SHRUG Icon");
+    $('textarea').get(0).value = $('textarea').get(0).value + "[img]https://s3-us-west-1.amazonaws.com/secchant.aws.bucket/icons/shrug.gif[/img]"
+  })
+
   function printProperties(object) {
     var property;
 
@@ -104,7 +143,7 @@ $(document).on('ready page:load', function(e) {
                 url: url,
                 type: "post",
                 success: function() {
-                  // console.log("success") 
+                  // console.log("success")
                 },
                 complete: function() {
                   // console.log("complete");

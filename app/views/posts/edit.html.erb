@@ -5,17 +5,63 @@
   </div>
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
-      <%= render "/posts/bbcode" %>
-      
-      <%= form_for @post do |form_for| %>
 
-        <span id="labelMessage"> <%= form_for.label :message %> </span> <br />
-        <%= form_for.text_area :message %> <br />
 
-        <div class="submit">
-          <%= form_for.submit %>
-        </div>
-      <% end %>
+      <div class="ui grid">
+
+
+          <div class="three column row">
+
+
+            <div class="eight wide column">
+
+
+
+              <%= form_for @post do |form_for| %>
+
+                <span id="labelMessage"> <%= form_for.label :message %> </span> <br />
+                <%= form_for.text_area :message %> <br />
+
+                <div class="submit">
+                  <%= form_for.submit %>
+                </div>
+              <% end %>
+
+
+
+            </div>
+
+
+            <div class="three wide column">
+
+
+              <%= render "/posts/bbcode" %>
+
+
+
+            </div>
+
+            <div class="three wide column">
+
+
+              <%= render "/posts/icons" %>
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+
+
+      </div>
+
+
+
+
     </div>
 
   </div>

@@ -5,56 +5,110 @@
   </div>
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
-      <%= render "/posts/bbcode" %>
 
-      <%= form_for @post do |f| %>
-        <%= hidden_field(:reply_post, :id) %>
-        <span id="labelMessage"> <%= f.label :message %> </span> <br />
-        <%= f.text_area :message %><br />
 
-        <div class="submit">
-          <%= f.submit %>
-        </div>
-      <% end %> <br /> <br />
 
-      <div class="reply">
-        You are replying to the following post:
-      </div>
-      <table class="ui celled striped table">
-        <thead>
-          <tr>
-            <th id="thead">
-              Posted By
-            </th>
-            <th id="thead">
-              Message
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div id="tData" class="replyUser">
-                <%= @reply_post.user.user_name %>
-              </div>
-            </td>
-            <td>
-              <span id="subject"> <%= @reply_post.topic.subject %> </span>
-              <div class="ui divider"></div>
-              <div class="pText">
+      <div class="ui grid">
 
-                <% if Post.is_invalid?(@reply_post) %>
-                    <%= Post.print_sanitize_msg(@reply_post) %>
-                <% else %>
-                    <%== Post.print_sanitize_msg(@reply_post).bbcode_to_html %>
+
+        <div class="three column row">
+
+
+              <div class="eight wide column">
+
+                <%= form_for @post do |f| %>
+                  <%= hidden_field(:reply_post, :id) %>
+                  <span id="labelMessage"> <%= f.label :message %> </span> <br />
+                  <%= f.text_area :message %><br />
+
+                  <div class="submit">
+                    <%= f.submit %>
+                  </div>
                 <% end %>
 
+              </div>
+
+
+              <div class="three wide column">
+
+                <%= render "/posts/bbcode" %>
 
               </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+
+
+              <div class="three wide column">
+
+                <%= render "/posts/icons" %>
+
+              </div>
+
+
+
+        </div>
+
+
+        <div class="one column row">
+
+            <div class="sixteen wide column">
+
+
+
+
+
+              <div class="reply">
+                You are replying to the following post:
+              </div>
+              <table class="ui celled striped table">
+                <thead>
+                  <tr>
+                    <th id="thead">
+                      Posted By
+                    </th>
+                    <th id="thead">
+                      Message
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div id="tData" class="replyUser">
+                        <%= @reply_post.user.user_name %>
+                      </div>
+                    </td>
+                    <td>
+                      <span id="subject"> <%= @reply_post.topic.subject %> </span>
+                      <div class="ui divider"></div>
+                      <div class="pText">
+
+                        <% if Post.is_invalid?(@reply_post) %>
+                            <%= Post.print_sanitize_msg(@reply_post) %>
+                        <% else %>
+                            <%== Post.print_sanitize_msg(@reply_post).bbcode_to_html %>
+                        <% end %>
+
+
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+      </div>
+
+
     </div>
   </div>
 </div>

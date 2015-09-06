@@ -5,10 +5,50 @@
   </div>
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
-      <div id="topicLink">
-        <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %> - Start New Topic
+      <div class="ui grid">
+
+        <div class="three column row">
+
+
+
+
+          <div class="eight wide column">
+
+            <div id="topicLink">
+              <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %> - Start New Topic
+            </div><br />
+
+
+            <%= render "topics/form" %>
+
+
+          </div>
+
+
+          <div class="three wide column" id="markupIcons">
+
+
+            <%= render "/posts/bbcode" %>
+
+
+          </div>
+
+
+          <div class="three wide column" id="markupIcons">
+
+            <%= render "/posts/icons" %>
+
+
+          </div>
+
+
+
+        </div>
+
+
       </div>
-      <%= render "/posts/bbcode" %>
-      <%= render "topics/form" %>
+
+
+
   </div>
 </div>

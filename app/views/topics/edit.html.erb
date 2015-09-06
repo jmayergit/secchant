@@ -3,24 +3,70 @@
   <div class="two wide column" id="twoWideColumn">
     <%= render "devise/shared/leftNav" %>
   </div>
+
+
+
   <div class="fourteen wide column" id="fourteenWideColumn">
     <div id="bodyR">
-      <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %>
-      <%= render "/posts/bbcode" %>
-      
-      <%= form_for @topic do |topic_form| %>
-        <%= topic_form.label :subject %><br />
-        <%= topic_form.text_field :subject %><br />
 
-        <%= topic_form.fields_for @post do |post| %>
-          <span id="labelMessage">  Message </span> <br />
-          <%= post.text_area :message %>
-        <% end %>
+      <div class="ui grid">
 
-        <div class="submit">
-          <%= topic_form.submit %>
+
+        <div class="three column row">
+
+
+          <div class="eight wide column">
+
+
+            <%= link_to @forum.name, forum_show_path(@forum), :id => "topicLink" %>
+
+
+            <%= form_for @topic do |topic_form| %>
+              <%= topic_form.label :subject %><br />
+              <%= topic_form.text_field :subject %><br />
+
+              <%= topic_form.fields_for @post do |post| %>
+                <span id="labelMessage">  Message </span> <br />
+                <%= post.text_area :message %>
+              <% end %>
+
+              <div class="submit">
+                <%= topic_form.submit %>
+              </div>
+            <% end %>
+
+
+
+          </div>
+
+
+
+          <div class="three wide column" id="markupIcons">
+
+
+            <%= render "/posts/bbcode" %>
+
+          </div>
+
+
+
+          <div class="three wide column" id="markupIcons">
+
+            <%= render "/posts/icons" %>
+
+          </div>
+
+
+
+
+
         </div>
-      <% end %>
+
+
+      </div>
+
+
+
     </div>
   </div>
 </div>
