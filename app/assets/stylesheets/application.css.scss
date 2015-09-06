@@ -18,6 +18,13 @@
 
  @import "semantic-ui/modules/sticky";
 
+ @font-face {
+   font-family: "TexRoundMM";
+   src:font-url('TexRoundMM.ttf');
+   font-weight: normal;
+   font-style: normal;
+ }
+
 .ui.grid {
   margin-top: 0rem;
   margin-left: 0rem;
@@ -253,14 +260,14 @@ a {
   font-size: 13px;
 }
 
-.logoChant {
-  font-size: 35px;
-}
-
 #logoGold {
+  font-size: 35px;
+  font-family: TexRoundMM;
   color: #ffcc33;
 }
 
 #logoSilver {
+  font-size: 35px;
+  font-family: TexRoundMM;
   color: #eeeeee;
 }
