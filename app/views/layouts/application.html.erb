@@ -21,6 +21,12 @@
     <% else %>
       <%= link_to "Sign in", new_user_session_path, class: "blackSession" %> <%= link_to "Register", new_user_registration_path, class: "blackSession2" %>
     <% end %>
+
+    <% if admin_signed_in? %>
+      <% if current_admin.god_mode? %>
+        <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="three column row" id="tRant_Blue">
@@ -35,12 +41,10 @@
 
     </div>
 
-    <div class="two wide column" id="fiveWide">
-        <% if admin_signed_in? %>
-          <% if current_admin.god_mode? %>
-            <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
-          <% end %>
-        <% end %>
+    <div class="two wide middle aligned column" id="fiveWide">
+
+      <%= link_to "Not To Be Confused With The Real Rant", "http://www.secrant.com" %>
+
     </div>
 
     <div class="two wide middle aligned column" id="fiveWide">
