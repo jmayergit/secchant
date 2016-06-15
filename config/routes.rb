@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   get '/chant/usersearch' => 'search#user', as: 'user_search'
 
-  get '/chant/topicsearch' => 'search#topic', as: 'topic_search'
+  get '/chant/topicsearch/:user' => 'search#topic', as: 'topic_search'
 
-  get '/chant/postsearch' => 'search#post', as: 'post_search'
+  get '/chant/postsearch/:user' => 'search#post', as: 'post_search'
 
   get '/chant/replysearch' => 'search#reply', as: 'reply_search'
 
