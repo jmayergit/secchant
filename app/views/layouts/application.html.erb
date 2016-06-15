@@ -21,22 +21,31 @@
     <% else %>
       <%= link_to "Sign in", new_user_session_path, class: "blackSession" %> <%= link_to "Register", new_user_registration_path, class: "blackSession2" %>
     <% end %>
+
+    <% if admin_signed_in? %>
+      <% if current_admin.god_mode? %>
+        <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="three column row" id="tRant_Blue">
-    <div class="three wide column" id="fiveWide">
-      <%= image_tag "SecRantLogo-v1.gif", id: "tRant_Img" %>
+    <div class="two wide column" id="fiveWide">
+
+
+        <span id="logoGold">SEC</span><span id="logoSilver">CHANT.COM</span>
+
+
+
     </div>
 
-    <div class="three wide column" id="fiveWide">
-        <% if admin_signed_in? %>
-          <% if current_admin.god_mode? %>
-            <%= link_to 'Panel', admin_panel_path, :class => 'panelLink' %>
-          <% end %>
-        <% end %>
+    <div class="two wide middle aligned column" id="fiveWide">
+
+      <%= link_to "Not To Be Confused With The Real Rant", "http://www.secrant.com" %>
+
     </div>
 
-    <div class="three wide middle aligned column" id="fiveWide">
+    <div class="two wide middle aligned column" id="fiveWide">
       <div class="signInMenu">
         <% if admin_signed_in? %>
           <%= link_to "Sign out", destroy_admin_session_path, method: :delete, :class => 'session' %>
